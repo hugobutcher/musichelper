@@ -57,8 +57,8 @@ describe('timeline', () => {
 
   it('works out unknown chorus counts from the tempo', () => {
     const iwm = SONG_BY_ID['i-want-more']
-    const t2 = buildTimeline(iwm, iwm.sections.map((s) => s.start), 320)
-    // Piano solo 2:59 → 4:24 = 85 s; one 40-bar chorus at 225 bpm ≈ 42.7 s → 2 choruses.
+    const t2 = buildTimeline({ ...iwm, sections: iwm.sections.map((s, i) => (i === 3 ? { ...s, parts: [{ block: 'chorus' }] } : s)) }, iwm.sections.map((s) => s.start), 320)
+    // With no chorus count given, it is worked out from the section length and tempo.
     expect(t2[3].passes).toBe(2)
   })
 })

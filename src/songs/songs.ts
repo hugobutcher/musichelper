@@ -24,7 +24,7 @@ export interface SectionPart {
 export interface SongSection {
   name: string
   parts: SectionPart[]
-  /** Default start time in seconds (from research or estimated); the user can re-mark it. */
+  /** Default start time in seconds (published timings, or measured from the split parts); the user can re-mark it. */
   start: number
   /** True when the default start time is an estimate rather than sourced. */
   estimated?: boolean
@@ -95,7 +95,7 @@ export const SONGS: Song[] = [
     artist: 'Clifford Brown & Max Roach',
     recording: 'Clifford Brown & Max Roach (EmArcy, 1954) · Richie Powell, piano',
     key: 'F (second A in G♭)',
-    tempo: 164,
+    tempo: 166,
     feel: 'Medium-up swing',
     blocks: {
       intro: bars('N.C. Bb6 Ab6 Gb6/9 | Gb6/9 | N.C. Ab6 G6 Gb6/9 | F6/9:1 E6:3 | Eb6 D7 | Db7 C7b9 | Fmaj7 | Fmaj7 C7#9'),
@@ -109,15 +109,15 @@ export const SONGS: Song[] = [
     },
     sections: [
       { name: 'Intro', parts: [{ block: 'intro', times: 1 }], start: 0 },
-      { name: 'Head', parts: [{ block: 'head', times: 1 }], start: t('0:12') },
-      { name: 'Tenor sax solo', parts: [{ block: 'solo', times: 1 }], start: t('0:59') },
-      { name: 'Trumpet solo', parts: [{ block: 'solo', times: 2 }], start: t('1:46') },
+      { name: 'Head', parts: [{ block: 'head', times: 1 }], start: t('0:11') },
+      { name: 'Tenor sax solo', parts: [{ block: 'solo', times: 1 }], start: t('0:58') },
+      { name: 'Trumpet solo', parts: [{ block: 'solo', times: 2 }], start: t('1:45') },
       { name: 'Piano solo', parts: [{ block: 'solo', times: 1 }], start: t('3:20') },
-      { name: 'Trumpet/tenor trade', parts: [{ block: 'solo', times: 1 }], start: t('4:08'), estimated: true },
-      { name: 'Drum solo', parts: [{ block: 'solo', times: 1 }], start: t('4:55') },
-      { name: 'Intro', parts: [{ block: 'intro', times: 1 }], start: t('5:41'), estimated: true },
-      { name: 'Head out', parts: [{ block: 'head', to: 28, times: 1 }], start: t('5:53'), estimated: true },
-      { name: 'Three-time tag and ending', parts: [{ block: 'tag', times: 1 }], start: t('6:34'), estimated: true },
+      { name: 'Trumpet/tenor trade', parts: [{ block: 'solo', times: 1 }], start: t('4:08') },
+      { name: 'Drum solo', parts: [{ block: 'solo', times: 1 }], start: t('4:50') },
+      { name: 'Intro', parts: [{ block: 'intro', times: 1 }], start: t('5:40') },
+      { name: 'Head out', parts: [{ block: 'head', to: 28, times: 1 }], start: t('5:52') },
+      { name: 'Three-time tag and ending', parts: [{ block: 'tag', times: 1 }], start: t('6:31') },
     ],
     checkByEar: [
       'Bar 13: B♭m7 A7 here; fake books have B♭m7 E♭7.',
@@ -131,7 +131,7 @@ export const SONGS: Song[] = [
     artist: 'Dexter Gordon',
     recording: 'Dexter Calling… (Blue Note, 1961) · Kenny Drew, piano',
     key: 'A♭ (disputed)',
-    tempo: 225,
+    tempo: 228,
     feel: 'Fast swing',
     blocks: {
       intro: bars('Bb7 | Bb7 | Eb7 | Eb7 | Bb7 | Bb7 | Eb7 | Eb7'),
@@ -142,16 +142,17 @@ export const SONGS: Song[] = [
     },
     sections: [
       { name: 'Intro', parts: [{ block: 'intro', times: 1 }], start: 0 },
-      { name: 'Head in', parts: [{ block: 'chorus', times: 1 }], start: 9, estimated: true },
-      { name: 'Sax solo', parts: [{ block: 'chorus', times: 3 }], start: 51, estimated: true },
-      { name: 'Piano solo', parts: [{ block: 'chorus' }], start: t('2:59'), estimated: true },
-      { name: 'Head out', parts: [{ block: 'chorus', times: 1 }], start: t('4:24'), estimated: true },
-      { name: 'Outro', parts: [{ block: 'outro', times: 1 }], start: t('5:07'), estimated: true },
+      { name: 'Head in', parts: [{ block: 'chorus', times: 1 }], start: 8.5 },
+      { name: 'Sax solo', parts: [{ block: 'chorus', times: 3 }], start: t('0:50') },
+      { name: 'Piano solo', parts: [{ block: 'chorus', times: 2 }], start: t('2:57') },
+      { name: 'Head out', parts: [{ block: 'chorus', times: 1 }], start: t('4:20') },
+      { name: 'Outro', parts: [{ block: 'outro', times: 1 }], start: t('5:02') },
     ],
     checkByEar: [
       'This is the least documented tune: no published lead sheet exists. Bars 9–24 and 33–40 are a reasoned reconstruction.',
       'The key (A♭) is inferred; it could be a different concert key.',
       'The 8-bar intro/outro (B♭7–E♭7) may sit elsewhere in the form.',
+      'Section times were found from the split parts; the sax plays 3 choruses and the piano 2.',
     ],
   },
   {
@@ -189,7 +190,7 @@ export const SONGS: Song[] = [
     artist: 'Kenny Barron',
     recording: 'Invitation (Criss Cross, 1990)',
     key: 'C',
-    tempo: 170,
+    tempo: 163,
     feel: 'Medium swing',
     blocks: {
       chorus: bars(
@@ -198,18 +199,18 @@ export const SONGS: Song[] = [
       ending: bars('Cmaj7 Am7 | Dm7 G7 | Cmaj7 Am7 | Dm7 G7 | Cmaj7'),
     },
     sections: [
-      { name: 'Head in', parts: [{ block: 'chorus', times: 1 }], start: 0, estimated: true },
-      { name: 'Bass solo', parts: [{ block: 'chorus' }], start: 45, estimated: true },
-      { name: 'Sax solo', parts: [{ block: 'chorus' }], start: 90, estimated: true },
-      { name: 'Piano solo', parts: [{ block: 'chorus' }], start: 180, estimated: true },
-      { name: 'Trading fours', parts: [{ block: 'chorus' }], start: 270, estimated: true },
-      { name: 'Head out', parts: [{ block: 'chorus', times: 1 }], start: 360, estimated: true },
-      { name: 'Ending', parts: [{ block: 'ending', times: 1 }], start: 405, estimated: true },
+      { name: 'Head in', parts: [{ block: 'chorus', times: 1 }], start: 0 },
+      { name: 'Bass solo', parts: [{ block: 'chorus', times: 2 }], start: t('0:46') },
+      { name: 'Sax solo', parts: [{ block: 'chorus', times: 2 }], start: t('2:19') },
+      { name: 'Piano solo', parts: [{ block: 'chorus', times: 2 }], start: t('3:52') },
+      { name: 'Trading fours', parts: [{ block: 'chorus', times: 1 }], start: t('5:30') },
+      { name: 'Head out', parts: [{ block: 'chorus', times: 1 }], start: t('6:18') },
+      { name: 'Ending', parts: [{ block: 'ending', times: 1 }], start: t('7:04') },
     ],
     checkByEar: [
       'Standard lead-sheet changes: no transcription of this recording exists, and Barron may reharmonise.',
       'Bridge bar 20: A7 here; some charts have Am7.',
-      'Section start times are estimates; mark them while listening.',
+      'Section times were found from the split parts (when the horns, piano and drums come and go); nudge them if a section feels early or late.',
     ],
   },
 ]
