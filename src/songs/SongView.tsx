@@ -49,6 +49,9 @@ export default function SongView({ song, stored, onBack, onChanged }: Props) {
   const [loop, setLoop] = useState(false)
   const [editing, setEditing] = useState(false)
   const [manualTime, setManualTime] = useState(0)
+  const [loadError, setLoadError] = useState<string | null>(null)
+  const [retry, setRetry] = useState(0)
+  const [markIndex, setMarkIndex] = useState(1)
 
   const updatePrefs = (fn: (p: typeof prefs) => typeof prefs) =>
     setPrefs((p) => {
@@ -62,13 +65,19 @@ export default function SongView({ song, stored, onBack, onChanged }: Props) {
     if (!stored) return
     let live = true
     let p: SongPlayer | null = null
-    SongPlayer.load(song.id, stored.files, stored.duration).then((loaded) => {
-      if (!live) return loaded.dispose()
-      p = loaded
-      loaded.setSpeed(prefs.speed)
-      setPlayer(loaded)
-      loaded.subscribe(setPs)
-    })
+    setLoadError(null)
+    SongPlayer.load(song.id, stored.files, stored.duration)
+      .then((loaded) => {
+        if (!live) return loaded.dispose()
+        p = loaded
+        loaded.setSpeed(prefs.speed)
+        // A fresh player starts on the full mix.
+        setPiano(true)
+        setHorns(true)
+        setPlayer(loaded)
+        loaded.subscribe(setPs)
+      })
+      .catch((err) => live && setLoadError(err instanceof Error ? err.message : String(err)))
     return () => {
       live = false
       p?.dispose()
@@ -76,7 +85,7 @@ export default function SongView({ song, stored, onBack, onChanged }: Props) {
       setPs(null)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [song.id, stored?.importedAt])
+  }, [song.id, stored?.importedAt, retry])
 
   const duration = ps?.duration || stored?.duration || song.sections[song.sections.length - 1].start + 60
   const starts = song.sections.map((s, i) => prefs.starts[i] ?? s.start)
@@ -119,14 +128,24 @@ export default function SongView({ song, stored, onBack, onChanged }: Props) {
     else setManualTime(t)
   }
 
+  /** Set a section's start; later marks that would now come before it are cleared. */
   const markSection = (i: number, t: number) =>
     updatePrefs((p) => {
       const s = [...p.starts]
-      s[i] = Math.round(t * 100) / 100
+      s[i] = Math.max(0, Math.round(t * 100) / 100)
+      for (let j = i + 1; j < s.length; j++) if (s[j] != null && s[j]! <= s[i]!) s[j] = null
       return { ...p, starts: s }
     })
 
-  const nextSectionToMark = Math.min(pos.section + 1, song.sections.length - 1)
+  const nextSectionToMark = Math.min(Math.max(1, markIndex), song.sections.length - 1)
+  const markNext = () => {
+    markSection(nextSectionToMark, time)
+    setMarkIndex(nextSectionToMark + 1)
+  }
+  const toggleEditing = () => {
+    if (!editing) setMarkIndex(pos.section + 1)
+    setEditing(!editing)
+  }
 
   const remove = async () => {
     if (!stored) return
@@ -214,7 +233,18 @@ export default function SongView({ song, stored, onBack, onChanged }: Props) {
         </div>
       ) : (
         <div className="card empty small">
-          {stored ? 'Loading audio…' : 'No audio on this phone yet. Add this song’s file on the Songs page to play along. You can still read the chart: tap a bar to step through it.'}
+ {loadError ? (
+            <>
+              Couldn’t load the audio ({loadError}).{' '}
+              <button className="text-btn" onClick={() => setRetry((n) => n + 1)}>
+                Try again
+              </button>
+            </>
+          ) : stored ? (
+            'Loading audio…'
+          ) : (
+            'No audio on this phone yet. Add this song’s file on the Songs page to play along. You can still read the chart: tap a bar to step through it.'
+          )}
         </div>
       )}
 
@@ -253,7 +283,7 @@ export default function SongView({ song, stored, onBack, onChanged }: Props) {
 
       {stored && (
         <div className="card mark-card">
-          <button className="text-btn" onClick={() => setEditing(!editing)}>
+          <button className="text-btn" onClick={toggleEditing}>
             {editing ? 'Done adjusting sections' : 'Adjust section times'}
           </button>
           {editing && (
@@ -261,7 +291,7 @@ export default function SongView({ song, stored, onBack, onChanged }: Props) {
               <p className="note">
                 Play the song and tap the button the moment each section begins. Times marked “est.” are guesses until you mark them.
               </p>
-              <button className="play-btn" onClick={() => markSection(nextSectionToMark, time)}>
+              <button className="play-btn" onClick={markNext}>
                 Mark “{song.sections[nextSectionToMark].name}” at {fmt(time)}
               </button>
               <ul className="mark-list">

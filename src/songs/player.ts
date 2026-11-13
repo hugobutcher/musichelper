@@ -1,4 +1,4 @@
-import { stopAll as stopPracticeAudio } from '../audio/session'
+import { keepAwake, stopAll as stopPracticeAudio } from '../audio/session'
 import { type MixFile, getAudio } from './storage'
 
 /**
@@ -31,7 +31,7 @@ export class SongPlayer {
   private listeners = new Set<Listener>()
   private raf = 0
   private speed = 1
-  private loop: [number, number] | null = null
+  loop: [number, number] | null = null
   private disposed = false
   readonly available: MixFile[]
   duration: number
@@ -52,17 +52,28 @@ export class SongPlayer {
       el.preload = f === 'full.mp3' ? 'auto' : 'metadata'
       el.src = url
       ;(el as HTMLAudioElement & { preservesPitch?: boolean }).preservesPitch = true
-      el.addEventListener('ended', () => p.emit())
+      ;(el as HTMLAudioElement & { webkitPreservesPitch?: boolean }).webkitPreservesPitch = true
       el.addEventListener('loadedmetadata', () => {
         if (Number.isFinite(el.duration) && el.duration > 0 && f === 'full.mp3') p.duration = el.duration
         p.emit()
+      })
+      // These also fire for play/pause from AirPods, the lock screen or Control Center.
+      el.addEventListener('play', () => p.onPlayState(el))
+      el.addEventListener('pause', () => p.onPlayState(el))
+      el.addEventListener('seeked', () => p.emit())
+      el.addEventListener('timeupdate', () => p.checkLoop(el))
+      el.addEventListener('ended', () => {
+        if (p.loop && el === p.el) {
+          el.currentTime = p.loop[0]
+          void el.play().catch(() => undefined)
+        } else p.onPlayState(el)
       })
       p.els.set(f, el)
     }
     return p
   }
 
-  private get el(): HTMLAudioElement {
+  get el(): HTMLAudioElement {
     return this.els.get(this.active) ?? this.els.get('full.mp3')!
   }
 
@@ -83,9 +94,25 @@ export class SongPlayer {
     this.listeners.forEach((l) => l(s))
   }
 
+  /** Jump back to the loop start; the end is kept just short of the track end so it never "ends". */
+  checkLoop(el: HTMLAudioElement) {
+    if (!this.loop || el !== this.el) return
+    const end = Number.isFinite(el.duration) ? Math.min(this.loop[1], el.duration - 0.15) : this.loop[1]
+    if (el.currentTime >= end) el.currentTime = this.loop[0]
+  }
+
+  /** Keep the tick, the screen wake lock and the UI in step with the element's real state. */
+  onPlayState(el: HTMLAudioElement) {
+    if (el !== this.el || this.disposed) return
+    cancelAnimationFrame(this.raf)
+    if (!el.paused) this.raf = requestAnimationFrame(this.tick)
+    keepAwake(!el.paused && !el.ended)
+    this.emit()
+  }
+
   private tick = () => {
     const el = this.el
-    if (this.loop && el.currentTime >= this.loop[1]) el.currentTime = this.loop[0]
+    this.checkLoop(el)
     this.emit()
     if (!el.paused) this.raf = requestAnimationFrame(this.tick)
   }
@@ -144,6 +171,7 @@ export class SongPlayer {
   }
 
   dispose() {
+    if (!this.el.paused) keepAwake(false)
     this.disposed = true
     cancelAnimationFrame(this.raf)
     this.els.forEach((el) => {

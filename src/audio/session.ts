@@ -38,7 +38,8 @@ async function acquireWakeLock() {
   }
 }
 
-function keepAwake(on: boolean) {
+/** Keep the screen on while something plays; also tells the app it is busy (no update reloads). */
+export function keepAwake(on: boolean) {
   wantAwake = on
   if (on) void acquireWakeLock()
   else if (wakeLock) {
@@ -237,4 +238,9 @@ export async function playMelody(p: MelodyPlayback): Promise<boolean> {
   transport.start('+0.15')
   keepAwake(true)
   return true
+}
+
+/** True while practice audio or a song is playing. */
+export function isBusy() {
+  return wantAwake
 }

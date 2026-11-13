@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { registerSW } from 'virtual:pwa-register'
 import App from './App'
+import { isBusy } from './audio/session'
 import './styles.css'
 
 // A new version of the app downloads in the background. Apply it the next time the app is
@@ -14,7 +15,8 @@ const updateSW = registerSW({
   },
 })
 document.addEventListener('visibilitychange', () => {
-  if (document.hidden && updateReady) {
+  // Locking the phone mid-song also hides the app: only update when nothing is playing.
+  if (document.hidden && updateReady && !isBusy()) {
     updateReady = false
     void updateSW(true)
   }

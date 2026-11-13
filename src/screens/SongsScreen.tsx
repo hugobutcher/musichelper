@@ -16,12 +16,14 @@ export default function SongsScreen() {
     }
   })
   const [busy, setBusy] = useState(false)
+  const [loaded, setLoaded] = useState(false)
   const [message, setMessage] = useState<{ kind: 'ok' | 'error'; text: string } | null>(null)
   const fileInput = useRef<HTMLInputElement>(null)
 
   const refresh = () =>
     listStoredSongs()
       .then((list) => setStored(Object.fromEntries(list.map((s) => [s.songId, s]))))
+      .finally(() => setLoaded(true))
       .catch((err) => setMessage({ kind: 'error', text: `Couldn’t read saved songs: ${String(err)}` }))
 
   useEffect(() => {
@@ -59,6 +61,7 @@ export default function SongsScreen() {
     else setMessage({ kind: 'ok', text: `Added ${done.join(', ')}.` })
   }
 
+  if (openId && !loaded) return <p className="hint">Loading…</p>
   if (openId) {
     return <SongView song={SONG_BY_ID[openId]} stored={stored[openId] ?? null} onBack={() => open(null)} onChanged={refresh} />
   }
@@ -73,7 +76,7 @@ export default function SongsScreen() {
       <ul className="song-list">
         {SONGS.map((s) => (
           <li key={s.id}>
-            <button className="song-row" onClick={() => open(s.id)}>
+            <button className="song-row" disabled={busy} onClick={() => open(s.id)}>
               <div>
                 <div className="song-title">{s.title}</div>
                 <div className="song-artist">{s.artist}</div>
