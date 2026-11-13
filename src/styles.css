@@ -13,39 +13,50 @@
   --green: #34c759;
   --green-text: #248a3d;
   --red: #ff3b30;
-  --tabbar-h: 50px;
+  --tabbar-h: 49px;
   color-scheme: light;
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
 }
 
 * { box-sizing: border-box; }
 
-html, body, #root {
-  margin: 0;
+html {
   height: 100%;
-  background: var(--bg);
+  /* Canvas in the tab-bar colour: if an iOS build leaves a strip below the layout viewport,
+     it reads as part of the tab bar rather than an empty band. */
+  background: #f9f9f9;
+}
+body, #root { height: 100%; margin: 0; }
+html, body {
   color: var(--text);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
   overscroll-behavior: none;
 }
 
-/* Fill the whole screen (incl. under the home indicator) so the tab bar sits flush at the bottom. */
+/* iOS 26 Home Screen bug (WebKit 301108): the layout viewport can be one status bar short.
+   Growing the root box makes WebKit use the full screen; a no-op where 100% is already full height. */
+@media (display-mode: standalone) {
+  html { min-height: min(100lvh, calc(100% + env(safe-area-inset-top, 0px))); }
+}
+
+/* App shell pinned to the viewport; only .screen scrolls, the tab bar is the last flex child. */
 .app {
   position: fixed;
   inset: 0;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  background: var(--bg);
 }
 
 .screen {
-  flex: 1;
+  flex: 1 1 auto;
   min-height: 0;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
-  padding: calc(env(safe-area-inset-top) + 10px) 16px 20px;
+  overscroll-behavior-y: contain;
+  padding: calc(env(safe-area-inset-top, 0px) + 10px) max(16px, env(safe-area-inset-right, 0px)) 20px
+    max(16px, env(safe-area-inset-left, 0px));
 }
 
 h1 {
@@ -65,7 +76,8 @@ h1 {
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
   border-top: 0.5px solid rgba(0, 0, 0, 0.3);
-  padding-bottom: env(safe-area-inset-bottom);
+  /* The bar colour fills the home-indicator area, like a native tab bar. Bottom inset only here. */
+  padding: 0 env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
 }
 
 .tab {
