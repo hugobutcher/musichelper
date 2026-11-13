@@ -8,4 +8,4 @@
  *      https://hugobutcher.github.io and redirect URI https://hugobutcher.github.io/musichelper/
  * Empty = Drive import not set up yet.
  */
-export const GOOGLE_CLIENT_ID = ''
+export const GOOGLE_CLIENT_ID = '729566250846-022ejeaipivd6qr2ivdlbopkpuev8d1i.apps.googleusercontent.com'
