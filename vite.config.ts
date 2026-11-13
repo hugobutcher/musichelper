@@ -30,6 +30,19 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+        runtimeCaching: [
+          {
+            // Piano samples: download once, then play offline.
+            urlPattern: /^https:\/\/tonejs\.github\.io\/audio\/salamander\//,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'piano-samples',
+              expiration: { maxEntries: 80 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+        ],
       },
     }),
   ],

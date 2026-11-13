@@ -1,0 +1,3311 @@
+[
+ {
+  "songId": "freddie-freeloader-kind-of-blue-1959",
+  "identifiedRecording": "Miles Davis, \"Freddie Freeloader\", track 2 on Kind of Blue (Columbia CL 1355 / CS 8163). Master take CO62290-4, per jazzdisco.org. Recorded March 2, 1959, Columbia 30th Street Studio, New York. Released August 17, 1959. Produced by Irving Townsend. Personnel: Miles Davis (trumpet), Julian \"Cannonball\" Adderley (alto sax), John Coltrane (tenor sax), Wynton Kelly (piano; the only Kind of Blue track with Kelly instead of Bill Evans), Paul Chambers (bass), Jimmy Cobb (drums). The listed length is 9:46. Speed-corrected reissues of side one run a few seconds longer. The user's 9:47 file is almost certainly this master take; I am highly confident. The allsolos.com solo timestamps (Kelly 0:44, Davis 2:12, Coltrane 4:29, Adderley 6:22, Chambers 8:12-8:56) fit a 9:46-9:47 file.",
+  "key": "Bb (concert); Bb blues",
+  "timeSignature": "4/4",
+  "approxTempoBpm": 129,
+  "feel": "medium swing blues (allsolos.com measures 127-130 bpm across the solos)",
+  "blocks": [
+   {
+    "name": "head",
+    "formLabels": "24-bar head: a 12-bar blues played twice (A A'). Pass 1 (bars 1-12) uses the first ending, with Ab7 in bars 11-12. Pass 2 (bars 13-24) uses the second ending, which is played only on the head: Ab7 in bar 23, resolving to Bb7 in bar 24 (disputed; see uncertainties). There is no quick IV in bar 2. No intro: the head starts at 0:00.",
+    "bars": [
+     {
+      "bar": 1,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ],
+      "note": "Head, pass 1. Kelly plays a piano countermelody under the horns"
+     },
+     {
+      "bar": 2,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ],
+      "note": "No quick-change IV; Eb7 waits until bar 5"
+     },
+     {
+      "bar": 3,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 4,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 5,
+      "chords": [
+       {
+        "symbol": "Eb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 6,
+      "chords": [
+       {
+        "symbol": "Eb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 7,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 8,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 9,
+      "chords": [
+       {
+        "symbol": "F7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 10,
+      "chords": [
+       {
+        "symbol": "Eb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 11,
+      "chords": [
+       {
+        "symbol": "Ab7",
+        "beats": 4
+       }
+      ],
+      "note": "First ending: bVII7 (backdoor dominant) instead of the usual I/V turnaround"
+     },
+     {
+      "bar": 12,
+      "chords": [
+       {
+        "symbol": "Ab7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 13,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ],
+      "note": "Head, pass 2"
+     },
+     {
+      "bar": 14,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 15,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 16,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 17,
+      "chords": [
+       {
+        "symbol": "Eb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 18,
+      "chords": [
+       {
+        "symbol": "Eb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 19,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 20,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 21,
+      "chords": [
+       {
+        "symbol": "F7",
+        "beats": 4
+       }
+      ],
+      "note": "In the last four bars of the head, trumpet and tenor double the line in octaves and alto adds a middle voice (per jazzvideolessons.net)"
+     },
+     {
+      "bar": 22,
+      "chords": [
+       {
+        "symbol": "Eb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 23,
+      "chords": [
+       {
+        "symbol": "Ab7",
+        "beats": 4
+       }
+      ],
+      "note": "Second ending: bVII7 in bar 11 of the pass only (per LearnJazzStandards). The Steve Hatfield lead sheet and the Real Book have Bb7 here instead; see uncertainties"
+     },
+     {
+      "bar": 24,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ],
+      "note": "Resolves to I7. On the final head this is the closing Bb chord, held for a few seconds to the end of the track (about 9:40-9:46)"
+     }
+    ]
+   },
+   {
+    "name": "chorus",
+    "formLabels": "12-bar blues solo chorus in Bb, using the head's first ending (bVII7 Ab7 for the last two bars of each chorus)",
+    "bars": [
+     {
+      "bar": 1,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 2,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 3,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 4,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 5,
+      "chords": [
+       {
+        "symbol": "Eb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 6,
+      "chords": [
+       {
+        "symbol": "Eb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 7,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 8,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 9,
+      "chords": [
+       {
+        "symbol": "F7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 10,
+      "chords": [
+       {
+        "symbol": "Eb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 11,
+      "chords": [
+       {
+        "symbol": "Ab7",
+        "beats": 4
+       }
+      ],
+      "note": "bVII7 backdoor dominant back to Bb7. Kelly plays a Bb major triad over it, which stresses the #11 (D)"
+     },
+     {
+      "bar": 12,
+      "chords": [
+       {
+        "symbol": "Ab7",
+        "beats": 4
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sections": [
+   {
+    "name": "Head",
+    "block": "head",
+    "choruses": "1 pass of the 24-bar head (= 2 twelve-bar choruses)",
+    "approxStart": "0:00"
+   },
+   {
+    "name": "Piano solo (Wynton Kelly)",
+    "block": "chorus",
+    "choruses": "4",
+    "approxStart": "0:44"
+   },
+   {
+    "name": "Trumpet solo (Miles Davis)",
+    "block": "chorus",
+    "choruses": "6",
+    "approxStart": "2:12"
+   },
+   {
+    "name": "Tenor sax solo (John Coltrane)",
+    "block": "chorus",
+    "choruses": "5",
+    "approxStart": "4:29"
+   },
+   {
+    "name": "Alto sax solo (Cannonball Adderley)",
+    "block": "chorus",
+    "choruses": "5",
+    "approxStart": "6:22"
+   },
+   {
+    "name": "Bass solo (Paul Chambers)",
+    "block": "chorus",
+    "choruses": "2",
+    "approxStart": "8:12"
+   },
+   {
+    "name": "Head",
+    "block": "head",
+    "choruses": "1 pass of the 24-bar head (= 2 twelve-bar choruses), ending on a held Bb7",
+    "approxStart": "8:56"
+   }
+  ],
+  "uncertainties": [
+   "CHANGED approxStart for every section after the first head. Before: 0:45 / 2:15 / 4:30 / 6:23 / 8:15 / 9:00. After: 0:44 / 2:12 / 4:29 / 6:22 / 8:12 / 8:56. Why: allsolos.com's individual solo pages give Spotify timestamps (Kelly 0:44-2:14, Davis 2:12-4:30, Coltrane 4:29-6:23, Adderley 6:22-8:14, Chambers 8:12-8:56). The draft said no source gave start times; that was wrong. These times are from the Spotify master, so a 9:47 file may be offset by about a second.",
+   "CHANGED approxTempoBpm 128 -> 129, and the feel note now cites allsolos' measured tempos (Kelly 129, Davis 127, Coltrane 129, Adderley 130, Chambers 130). This is a minor change.",
+   "ADDED the master take number CO62290-4 (jazzdisco.org). jazzdisco lists only a false start (take 3, issued on Mosaic) plus the master. It lists no insert or splice, so the TalkBass splice claim (head out spliced onto the master) is still unconfirmed. Even if true, it would not change the chords.",
+   "SOFTENED the speed-correction claim. The draft said reissues run 'about 9:49'; I did not verify that exact figure. It is well documented that side one of Kind of Blue (March 2 session) ran slightly fast and was speed-corrected on later reissues, which makes them a few seconds longer.",
+   "The chorus counts (Kelly 4, Davis 6, Coltrane 5, Adderley 5, Chambers 2) are confirmed by allsolos and agree with the solo durations (about 22.3 s per chorus). A search snippet quoting an All About Jazz article (page returned 403) also says Davis plays six choruses, Coltrane five and Chambers two. Total: 2+4+6+5+5+2+2 = 26 choruses = 312 bars, about 9:40 at 129 bpm, plus a few seconds of final chord, which matches 9:46.",
+   "Intro: the timestamps confirm there is none. Kelly's solo starts at 0:44, exactly two choruses of head at about 129 bpm, so the head starts at 0:00 with no intro.",
+   "Ending: after the head out (from 8:56), two choruses end at about 9:40, which leaves about 6 s. I take that to be the final chord ringing out. No source names the final chord. Bb7 (the second-ending resolution) is my inference, so I did not add a separate ending block.",
+   "STILL DISPUTED, the second ending of the head (bars 23-24). LearnJazzStandards, which describes the recording's form, gives Ab7 in bar 11 of pass 2 resolving to Bb7 in bar 12, and I kept that. Steve Hatfield's tune-study lead sheet (now read: the PDF text extracts fine) gives the second ending as F7 | Eb7 | Bb7 | Bb7 with no Ab7, marked 'played only on the Head'. A Harmony Central post quoting the Real Book, and the KVR fake-book page, also have Bb7 for both bars. That makes the vote 2-3 fake-book/education charts for Bb7 Bb7 against one for Ab7 Bb7. I could not settle it from a transcription of the recording. Check by ear: does the bass hit Ab or Bb on the downbeat of bar 23?",
+   "Hatfield's lead sheet also shows a parenthetical (Bb7) near F7 in bars 9-10 of both endings, apparently an optional Bb7 between F7 and Eb7. It is not reflected here because the draft's F7 | Eb7 is the standard reading.",
+   "Generic sites such as jazz-circle.com give a plain blues ending (Bb7 | F7 in bars 11-12). They clearly do not reflect this recording, which uses Ab7, and I ignored them.",
+   "Bars 11-12 of the solo choruses: Wikipedia, Hanspeter Kruesi's chart and thejazzlanguage.com (Kelly solo analysis) all put Ab7 in bars 11-12. Individual soloists may still imply Bb7 or an Eb-minor sound in bar 12 (JazzAdvice says Kelly implies Eb- in his 4th chorus). Rhythm-section substitutions in later choruses were not checked.",
+   "Bass solo backing: Mosaic's notes mention only Kelly 'goading' Chambers. No source mentions horn backgrounds, so none are noted. Not verified by ear.",
+   "The bar 21 orchestration note (octave doubling, alto middle voice) comes from jazzvideolessons.net, which says only 'the last 4 bars'. It may apply to one or both passes of the head."
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Freddie_Freeloader",
+   "https://www.allsolos.com/recording/39/freddie-freeloader",
+   "https://www.allsolos.com/solo/93/wynton-kelly-piano-solo-on-freddie-freeloader",
+   "https://www.allsolos.com/solo/94/miles-davis-trumpet-solo-on-freddie-freeloader",
+   "https://www.allsolos.com/solo/95/john-coltrane-tenor-sax-solo-on-freddie-freeloader",
+   "https://www.allsolos.com/solo/96/julian-cannonball-adderley-alto-sax-solo-on-freddie-freeloader",
+   "https://www.allsolos.com/solo/97/paul-chambers-acoustic-bass-solo-on-freddie-freeloader",
+   "https://www.jazzdisco.org/miles-davis/discography/",
+   "http://stevehatfield.com/wp-content/uploads/2014/09/Freddie-Freeloader.pdf (text extracted with pdftotext)",
+   "https://learnjazzstandards.com/jazz-standards/freddie-the-freeloader",
+   "https://jazzvideolessons.net/standards-studies/freddie-freeloader/",
+   "https://www.harmonycentral.com/forums/topic/1465759-how-should-i-solo-over-quotfreddie-freeloaderquot/ (search snippet only, quoting Real Book)",
+   "https://www.hanspeterkruesi.com/members/topic/2511-freddy-freeloader/ (search snippet)",
+   "http://thejazzlanguage.com/wynton-kelly-on-freddie-freeloader/ (search snippet)",
+   "https://www.mosaicrecords.com/miles-davis-kind-of-blue-mosaic-records/ (search snippet)",
+   "https://www.allaboutjazz.com/news/fifty-years-ago-today-freddie-freeloader-and-the-start-of-kind-of-blue (search snippet; page 403)",
+   "https://jazz-circle.com/standards/freddie-freeloader (generic changes, rejected)",
+   "https://www.kvraudio.com/forum/viewtopic.php?p=3803226 (from draft)"
+  ]
+ },
+ {
+  "songId": "joy-spring-clifford-brown-max-roach-1954",
+  "identifiedRecording": "\"Joy Spring\" (Clifford Brown), Clifford Brown-Max Roach Quintet: Clifford Brown (tp), Harold Land (ts), Richie Powell (p), George Morrow (b), Max Roach (d). Recorded at Capitol Melrose Studios, Los Angeles, on August 6, 1954. The master is matrix 10877-4, issued on EmArcy MG 36036 ('Clifford Brown & Max Roach'), also on the 10-inch MG 26043, Limelight LM-2-8201 and Mainstream MRL 386 (jazzdisco). The alternate take 10877-3 came out later (EmArcy 838 306-2 box; Mobile Fidelity MFCD826). The Brownie Complete EmArcy booklet lists the master at 6:49 and the alternate at 6:44. Your 6:50 file is almost certainly the master 10877-4 (high confidence). The timeline below, built from the bar counts at about 164 bpm, comes out at about 6:46-6:49, which also fits the master. Solo order (liner notes, allsolos, jazzleadsheets): Land, Brown (2 choruses), Powell, then the horns trade with Max, then a Max Roach brush solo.",
+  "key": "F major. The second 8 bars (bars 9-16) move up a half step to Gb major. The bridge (bars 17-24) starts another half step up on Gmaj7 (G), then moves down through F and Eb, touches Gb, and returns to F.",
+  "timeSignature": "4/4",
+  "approxTempoBpm": 164,
+  "feel": "Medium-up swing (about 161-166 bpm: Jazzomat measures 161, allsolos gives 161-166). The drum solo is played with brushes.",
+  "blocks": [
+   {
+    "name": "intro",
+    "formLabels": "Rhythm-section intro: an 8-bar phrase with a 3-eighth-note unison pickup (piano and bass). Parallel 6th and 6/9 punches move down chromatically, then a dominant chain (Eb6 D7 Db7 C7b9) in a 2-beat harmonic rhythm with eighth-note anticipations lands on Fmaj7, followed by a turnaround (Fmaj7 C7#9) into the head. The Jazzy Life chart writes it as 9 bars: bar 1 is the pickup bar (2.5 beats of rest plus 3 eighths) and is left out here. The intro is played at the start and again before the head out.",
+    "bars": [
+     {
+      "bar": 1,
+      "chords": [
+       {
+        "symbol": "N.C.",
+        "beats": 1
+       },
+       {
+        "symbol": "Bb6",
+        "beats": 1
+       },
+       {
+        "symbol": "Ab6",
+        "beats": 1
+       },
+       {
+        "symbol": "Gb6/9",
+        "beats": 1
+       }
+      ],
+      "note": "Beat 1 is the end of the unison pickup line. The three punches (Bb6, Ab6, Gb6/9) fall across beats 2-4 in a triplet-ish, anticipated rhythm, rounded here to whole beats. The Usenet source spells them Bbmaj7(13), Abmaj7(13), Gbmaj7(13)."
+     },
+     {
+      "bar": 2,
+      "chords": [
+       {
+        "symbol": "Gb6/9",
+        "beats": 4
+       }
+      ],
+      "note": "Gb6/9 is struck again on beat 1, then piano and bass play a unison line with no new chord symbol."
+     },
+     {
+      "bar": 3,
+      "chords": [
+       {
+        "symbol": "N.C.",
+        "beats": 1
+       },
+       {
+        "symbol": "Ab6",
+        "beats": 1
+       },
+       {
+        "symbol": "G6",
+        "beats": 1
+       },
+       {
+        "symbol": "Gb6/9",
+        "beats": 1
+       }
+      ],
+      "note": "Same rhythm as bar 1, a step lower: Ab6, G6, Gb6/9."
+     },
+     {
+      "bar": 4,
+      "chords": [
+       {
+        "symbol": "F6/9",
+        "beats": 1
+       },
+       {
+        "symbol": "E6",
+        "beats": 3
+       }
+      ],
+      "note": "F6/9 on beat 1, E6 hit repeatedly. Eb6 is anticipated on the and of 4."
+     },
+     {
+      "bar": 5,
+      "chords": [
+       {
+        "symbol": "Eb6",
+        "beats": 2
+       },
+       {
+        "symbol": "D7",
+        "beats": 2
+       }
+      ],
+      "note": "Dotted-quarter feel. Each chord arrives an eighth early (D7 on the and of 2)."
+     },
+     {
+      "bar": 6,
+      "chords": [
+       {
+        "symbol": "Db7",
+        "beats": 2
+       },
+       {
+        "symbol": "C7b9",
+        "beats": 2
+       }
+      ],
+      "note": "Db7 is anticipated on the and of 4 of bar 5. The Usenet post calls it Db6. C7(b9) comes in on the and of 2. Fmaj7 is anticipated on the and of 4."
+     },
+     {
+      "bar": 7,
+      "chords": [
+       {
+        "symbol": "Fmaj7",
+        "beats": 4
+       }
+      ],
+      "note": "Fmaj7, under a unison piano/bass line. The draft's 'F7' was a misreading: the Jazzy Life chart has F with a triangle, i.e. Fmaj7."
+     },
+     {
+      "bar": 8,
+      "chords": [
+       {
+        "symbol": "Fmaj7",
+        "beats": 2
+       },
+       {
+        "symbol": "C7#9",
+        "beats": 2
+       }
+      ],
+      "note": "Turnaround into the head"
+     }
+    ]
+   },
+   {
+    "name": "head",
+    "formLabels": "32-bar A B C A' (allsolos calls it ABCA; Jazzomat calls it A1(16) B(8) A2(8)): A = bars 1-8 (F), B = bars 9-16 (the same idea a half step up in Gb), C = bars 17-24 (bridge, starting on Gmaj7), A' = bars 25-32. These are the changes the rhythm section plays under the melody on this recording, where sources give them.",
+    "bars": [
+     {
+      "bar": 1,
+      "chords": [
+       {
+        "symbol": "Fmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 2,
+      "chords": [
+       {
+        "symbol": "Gm7",
+        "beats": 2
+       },
+       {
+        "symbol": "G#m7",
+        "beats": 2
+       }
+      ],
+      "note": "Recording: Gm, G#m, Am across bars 2-3 (jazzleadsheets). Fake book: Gm7 C7."
+     },
+     {
+      "bar": 3,
+      "chords": [
+       {
+        "symbol": "Am7",
+        "beats": 4
+       }
+      ],
+      "note": "Fake book: Fmaj7"
+     },
+     {
+      "bar": 4,
+      "chords": [
+       {
+        "symbol": "Bbm7",
+        "beats": 2
+       },
+       {
+        "symbol": "Eb7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 5,
+      "chords": [
+       {
+        "symbol": "F/A",
+        "beats": 2
+       },
+       {
+        "symbol": "Ab6",
+        "beats": 2
+       }
+      ],
+      "note": "Recording: F/A then Ab6. Fake book: Am7 D7."
+     },
+     {
+      "bar": 6,
+      "chords": [
+       {
+        "symbol": "Gm7",
+        "beats": 2
+       },
+       {
+        "symbol": "C7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 7,
+      "chords": [
+       {
+        "symbol": "F6",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 8,
+      "chords": [
+       {
+        "symbol": "Abm7",
+        "beats": 2
+       },
+       {
+        "symbol": "Db7",
+        "beats": 2
+       }
+      ],
+      "note": "ii-V into Gb"
+     },
+     {
+      "bar": 9,
+      "chords": [
+       {
+        "symbol": "Gbmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 10,
+      "chords": [
+       {
+        "symbol": "Abm7",
+        "beats": 2
+       },
+       {
+        "symbol": "Db7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 11,
+      "chords": [
+       {
+        "symbol": "Gbmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 12,
+      "chords": [
+       {
+        "symbol": "Bm7",
+        "beats": 2
+       },
+       {
+        "symbol": "E7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 13,
+      "chords": [
+       {
+        "symbol": "Bbm7",
+        "beats": 2
+       },
+       {
+        "symbol": "A7",
+        "beats": 2
+       }
+      ],
+      "note": "Jazzomat: Bbm7 A7. Learn Jazz Standards and fake books: Bbm7 Eb7."
+     },
+     {
+      "bar": 14,
+      "chords": [
+       {
+        "symbol": "Abm7",
+        "beats": 2
+       },
+       {
+        "symbol": "Db7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 15,
+      "chords": [
+       {
+        "symbol": "Gbmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 16,
+      "chords": [
+       {
+        "symbol": "Am7",
+        "beats": 2
+       },
+       {
+        "symbol": "D7",
+        "beats": 2
+       }
+      ],
+      "note": "ii-V up a half step into G for the bridge"
+     },
+     {
+      "bar": 17,
+      "chords": [
+       {
+        "symbol": "Gmaj7",
+        "beats": 4
+       }
+      ],
+      "note": "Bridge. Gmaj7 according to Jazzomat, Learn Jazz Standards and Guitar Composer's Toolbox (the bridge goes up another half step from Gb)."
+     },
+     {
+      "bar": 18,
+      "chords": [
+       {
+        "symbol": "Gm7",
+        "beats": 2
+       },
+       {
+        "symbol": "C7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 19,
+      "chords": [
+       {
+        "symbol": "Fmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 20,
+      "chords": [
+       {
+        "symbol": "Fm7",
+        "beats": 2
+       },
+       {
+        "symbol": "Adim7",
+        "beats": 1
+       },
+       {
+        "symbol": "Bb7",
+        "beats": 1
+       }
+      ],
+      "note": "Passing A diminished between Fm and Bb7. jazzleadsheets says it lines up with the rhythm-section hits. The beat placement is approximate."
+     },
+     {
+      "bar": 21,
+      "chords": [
+       {
+        "symbol": "Ebmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 22,
+      "chords": [
+       {
+        "symbol": "Abm7",
+        "beats": 2
+       },
+       {
+        "symbol": "Db7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 23,
+      "chords": [
+       {
+        "symbol": "Gbmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 24,
+      "chords": [
+       {
+        "symbol": "Gm7",
+        "beats": 2
+       },
+       {
+        "symbol": "C7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 25,
+      "chords": [
+       {
+        "symbol": "Fmaj7",
+        "beats": 4
+       }
+      ],
+      "note": "Last A"
+     },
+     {
+      "bar": 26,
+      "chords": [
+       {
+        "symbol": "Gm7",
+        "beats": 2
+       },
+       {
+        "symbol": "G#m7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 27,
+      "chords": [
+       {
+        "symbol": "Am7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 28,
+      "chords": [
+       {
+        "symbol": "Bbm7",
+        "beats": 2
+       },
+       {
+        "symbol": "Eb7",
+        "beats": 2
+       }
+      ],
+      "note": "On the head out, the form leaves here for the tag and ending block."
+     },
+     {
+      "bar": 29,
+      "chords": [
+       {
+        "symbol": "F/A",
+        "beats": 2
+       },
+       {
+        "symbol": "Ab6",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 30,
+      "chords": [
+       {
+        "symbol": "Gm7",
+        "beats": 2
+       },
+       {
+        "symbol": "C7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 31,
+      "chords": [
+       {
+        "symbol": "F6",
+        "beats": 4
+       }
+      ],
+      "note": "At the end of the first head, bars 31-32 are Harold Land's solo break: the rhythm section stops and the changes are implied."
+     },
+     {
+      "bar": 32,
+      "chords": [
+       {
+        "symbol": "Gm7",
+        "beats": 2
+       },
+       {
+        "symbol": "C7",
+        "beats": 2
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "solo chorus",
+    "formLabels": "32 bars: A (16 bars: 8 in F, then 8 in Gb), B (8-bar bridge starting on Gmaj7), A (8). Based on the Jazzomat analysis of Brown's solo on this session, with bars 5 and 29 aligned to the band's head and tag voicing. Used for the tenor, trumpet and piano solos and the trades, and implied under the drum solo.",
+    "bars": [
+     {
+      "bar": 1,
+      "chords": [
+       {
+        "symbol": "Fmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 2,
+      "chords": [
+       {
+        "symbol": "Gm7",
+        "beats": 2
+       },
+       {
+        "symbol": "C7",
+        "beats": 2
+       }
+      ],
+      "note": "The C7 is also played as G#dim7, G#m7 or Bb7 (jazzleadsheets). Under the head the band plays Gm7 G#m7."
+     },
+     {
+      "bar": 3,
+      "chords": [
+       {
+        "symbol": "Fmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 4,
+      "chords": [
+       {
+        "symbol": "Bbm7",
+        "beats": 2
+       },
+       {
+        "symbol": "Eb7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 5,
+      "chords": [
+       {
+        "symbol": "Am7",
+        "beats": 2
+       },
+       {
+        "symbol": "Ab7",
+        "beats": 2
+       }
+      ],
+      "note": "Draft had Eb7 D7. Ab7 is the band's substitute for D7 (head: F/A Ab6; tag: Am7 Ab7(13)). Fake book: Am7 D7. Jazzomat: Eb7 D7 in the first A, Am7 D7 in the last A."
+     },
+     {
+      "bar": 6,
+      "chords": [
+       {
+        "symbol": "Gm7",
+        "beats": 2
+       },
+       {
+        "symbol": "C7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 7,
+      "chords": [
+       {
+        "symbol": "F6",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 8,
+      "chords": [
+       {
+        "symbol": "Abm7",
+        "beats": 2
+       },
+       {
+        "symbol": "Db7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 9,
+      "chords": [
+       {
+        "symbol": "Gbmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 10,
+      "chords": [
+       {
+        "symbol": "Abm7",
+        "beats": 2
+       },
+       {
+        "symbol": "Db7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 11,
+      "chords": [
+       {
+        "symbol": "Gbmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 12,
+      "chords": [
+       {
+        "symbol": "Bm7",
+        "beats": 2
+       },
+       {
+        "symbol": "E7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 13,
+      "chords": [
+       {
+        "symbol": "Bbm7",
+        "beats": 2
+       },
+       {
+        "symbol": "A7",
+        "beats": 2
+       }
+      ],
+      "note": "Jazzomat: Bbm7 A7. Fake book: Bbm7 Eb7."
+     },
+     {
+      "bar": 14,
+      "chords": [
+       {
+        "symbol": "Abm7",
+        "beats": 2
+       },
+       {
+        "symbol": "Db7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 15,
+      "chords": [
+       {
+        "symbol": "Gbmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 16,
+      "chords": [
+       {
+        "symbol": "Am7",
+        "beats": 2
+       },
+       {
+        "symbol": "D7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 17,
+      "chords": [
+       {
+        "symbol": "Gmaj7",
+        "beats": 4
+       }
+      ],
+      "note": "Bridge. Gmaj7 according to Jazzomat (G-major-7 symbol), Learn Jazz Standards and Guitar Composer's Toolbox. Not a typo."
+     },
+     {
+      "bar": 18,
+      "chords": [
+       {
+        "symbol": "Gm7",
+        "beats": 2
+       },
+       {
+        "symbol": "C7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 19,
+      "chords": [
+       {
+        "symbol": "Fmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 20,
+      "chords": [
+       {
+        "symbol": "Fm7",
+        "beats": 2
+       },
+       {
+        "symbol": "Bb7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 21,
+      "chords": [
+       {
+        "symbol": "Ebmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 22,
+      "chords": [
+       {
+        "symbol": "Abm7",
+        "beats": 2
+       },
+       {
+        "symbol": "Db7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 23,
+      "chords": [
+       {
+        "symbol": "Gbmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 24,
+      "chords": [
+       {
+        "symbol": "Gm7",
+        "beats": 2
+       },
+       {
+        "symbol": "C7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 25,
+      "chords": [
+       {
+        "symbol": "Fmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 26,
+      "chords": [
+       {
+        "symbol": "Gm7",
+        "beats": 2
+       },
+       {
+        "symbol": "C7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 27,
+      "chords": [
+       {
+        "symbol": "Fmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 28,
+      "chords": [
+       {
+        "symbol": "Bbm7",
+        "beats": 2
+       },
+       {
+        "symbol": "Eb7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 29,
+      "chords": [
+       {
+        "symbol": "Am7",
+        "beats": 2
+       },
+       {
+        "symbol": "Ab7",
+        "beats": 2
+       }
+      ],
+      "note": "Draft had Am7 D7. Changed to match bar 5 and the band's habit. Fake book and Jazzomat: Am7 D7."
+     },
+     {
+      "bar": 30,
+      "chords": [
+       {
+        "symbol": "Gm7",
+        "beats": 2
+       },
+       {
+        "symbol": "C7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 31,
+      "chords": [
+       {
+        "symbol": "F6",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 32,
+      "chords": [
+       {
+        "symbol": "Gm7",
+        "beats": 2
+       },
+       {
+        "symbol": "C7",
+        "beats": 2
+       }
+      ],
+      "note": "Turnaround. At the end of Land's chorus, bars 31-32 are Brown's 2-bar break into his solo."
+     }
+    ]
+   },
+   {
+    "name": "tag and ending",
+    "formLabels": "Brown's coda. The head out plays bars 1-28 and then, in place of bars 29-30, the horns (trumpet and tenor) play a 2-bar tag three times (Am7 Ab13 | Dbmaj7). Two bars follow: a half-step slide from Emaj9 to Fmaj9, and the final chord. 8 bars in all, written out 3 times on the Jazzy Life chart.",
+    "bars": [
+     {
+      "bar": 1,
+      "chords": [
+       {
+        "symbol": "Am7",
+        "beats": 2
+       },
+       {
+        "symbol": "Ab13",
+        "beats": 2
+       }
+      ],
+      "note": "Tag 1. The horns lead in with an eighth-note pickup. Am7 lands on the and of 1, Ab7(13) on beat 3, and Dbmaj7 is anticipated on the and of 4."
+     },
+     {
+      "bar": 2,
+      "chords": [
+       {
+        "symbol": "Dbmaj7",
+        "beats": 4
+       }
+      ],
+      "note": "Dbmaj7 (deceptive move to bVI), not Db7. The horns play a line, and the piano left hand and bass rest on the chart."
+     },
+     {
+      "bar": 3,
+      "chords": [
+       {
+        "symbol": "Am7",
+        "beats": 2
+       },
+       {
+        "symbol": "Ab13",
+        "beats": 2
+       }
+      ],
+      "note": "Tag 2"
+     },
+     {
+      "bar": 4,
+      "chords": [
+       {
+        "symbol": "Dbmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 5,
+      "chords": [
+       {
+        "symbol": "Am7",
+        "beats": 2
+       },
+       {
+        "symbol": "Ab13",
+        "beats": 2
+       }
+      ],
+      "note": "Tag 3"
+     },
+     {
+      "bar": 6,
+      "chords": [
+       {
+        "symbol": "Dbmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 7,
+      "chords": [
+       {
+        "symbol": "Emaj9",
+        "beats": 1
+       },
+       {
+        "symbol": "Fmaj9",
+        "beats": 3
+       }
+      ],
+      "note": "A short Emaj7(9) on beat 1 slides up a half step to Fmaj7(9) on the and of 1, which is held."
+     },
+     {
+      "bar": 8,
+      "chords": [
+       {
+        "symbol": "Fmaj9",
+        "beats": 4
+       }
+      ],
+      "note": "The final Fmaj9 rings or is held under a fermata (inferred). The Jazzy Life chart shows rests in this bar."
+     }
+    ]
+   }
+  ],
+  "sections": [
+   {
+    "name": "Intro",
+    "block": "intro",
+    "choruses": "1 (8 bars plus a 3-eighth pickup)",
+    "approxStart": "0:00"
+   },
+   {
+    "name": "Head",
+    "block": "head",
+    "choruses": "1 (bars 31-32 are Land's solo break, at about 0:56)",
+    "approxStart": "0:12 (inferred: pickup plus 8 bars at about 164 bpm; the 0:56 break agrees with allsolos' 0:55 Land start)"
+   },
+   {
+    "name": "Tenor sax solo (Harold Land)",
+    "block": "solo chorus",
+    "choruses": "1",
+    "approxStart": "0:59 (allsolos gives 0:55-1:45, counting the 2-bar break at the end of the head)"
+   },
+   {
+    "name": "Trumpet solo (Clifford Brown)",
+    "block": "solo chorus",
+    "choruses": "2",
+    "approxStart": "1:46 (Jazzomat 1:42-3:17 and allsolos 1:44-3:21 count Brown's 2-bar break, which starts at about 1:43)"
+   },
+   {
+    "name": "Piano solo (Richie Powell)",
+    "block": "solo chorus",
+    "choruses": "1",
+    "approxStart": "3:20 (allsolos 3:19-4:08)"
+   },
+   {
+    "name": "Trumpet/tenor trade",
+    "block": "solo chorus",
+    "choruses": "1 (inferred: probably 4-bar trades with drums, trumpet/drums/tenor/drums)",
+    "approxStart": "4:08 (inferred)"
+   },
+   {
+    "name": "Drum solo (Max Roach, brushes)",
+    "block": "solo chorus",
+    "choruses": "1 (allsolos says 1.13 from 4:49, which probably includes Max's last 4-bar trade)",
+    "approxStart": "about 4:55 (allsolos 4:49-5:41)"
+   },
+   {
+    "name": "Intro (reprise)",
+    "block": "intro",
+    "choruses": "1 (8 bars plus pickup; assumed to be the same as the opening intro)",
+    "approxStart": "5:41 (inferred from the end of the drum solo)"
+   },
+   {
+    "name": "Head out",
+    "block": "head",
+    "choruses": "1 (bars 1-28 only, then into the tag)",
+    "approxStart": "5:53 (inferred)"
+   },
+   {
+    "name": "Three-time tag and ending",
+    "block": "tag and ending",
+    "choruses": "1 (tag x3 plus a 2-bar ending)",
+    "approxStart": "about 6:34 (inferred; the ending at about 6:46 plus ring-out fits the 6:49 master)"
+   }
+  ],
+  "uncertainties": [
+   "CHANGED intro bar 7: F7 -> Fmaj7. In the Jazzy Life MuseScore PDF the chord is F followed by a triangle (major 7th) glyph. A plain text extraction drops the triangle, which made it look like 'F7'. Checked by decoding the PDF's font map. The Usenet post also gives only '(F)'.",
+   "CHANGED intro layout. The Jazzy Life chart has 9 notated bars: bar 1 is a pickup bar (2.5 beats of rest plus 3 unison eighths), then 8 bars. From the chart's barlines: Bb6 Ab6 Gb6/9 | (Gb6/9, unison line) | Ab6 G6 Gb6/9 | F6/9 E6 (Eb6 anticipated) | Eb6 D7 | Db7 C7b9 | Fmaj7 (unison line) | Fmaj7 C7#9. Before -> after: draft bar 3 'Ab6 G6 Gb6/9' stays; draft bar 4 'F6/9' -> 'F6/9 E6'; draft bar 5 'E6 Eb6' -> 'Eb6 D7'; draft bar 6 'D7 Db7 C7b9' -> 'Db7 C7b9'; draft bar 7 'F7' -> 'Fmaj7'; draft bar 8 'F6 C7#9' -> 'Fmaj7 C7#9'. The chain from Eb6 to Fmaj7 moves every 2 beats, each chord anticipated by an eighth. Beat values are rounded. The punches in bars 1 and 3 are triplet-ish and anticipated, and N.C. on beat 1 marks the unison line.",
+   "Intro sources disagree a little. Usenet (2001) spells the punches as maj7(13) and calls the third dominant 'Db6'. Jazzy Life has Db7 and C7(b9), then C7(#9) at the turnaround. Both are secondary sources. The official version is Don Sickler's published quintet arrangement, which I did not see.",
+   "CHANGED tag bars 2/4/6: Db7 -> Dbmaj7. The Jazzy Life ending chart has Db with the triangle (maj7) glyph. CHANGED tag bar 7: E9 F9 -> Emaj9 Fmaj9. The chart has E(maj7)(9) and F(maj7)(9). CHANGED tag bar 7 beats: 2+2 -> 1+3. The slide is an eighth-note anticipation: E on beat 1, F on the and of 1, then held. The Ab7(13) is written 'Ab13'. Placement within the bar comes from the chart's note spacing: horn pickup, Am7 on the and of 1, Ab13 on beat 3, Dbmaj7 anticipated on the and of 4.",
+   "Tag and ending: only one transcription source (Jazzy Life) gives the chords. jazzleadsheets confirms that Brown's composed coda is played on this quintet recording but gives no chords. Exactly where the tag replaces bars 29-30 of the head out is inferred. It is consistent with the tag being a variant of A bars 5-6 and with the total track length. The final bar is inferred to be a held or fermata Fmaj9.",
+   "CHANGED bridge bar 1 (head bar 17 and solo bar 17): Gm7 -> Gmaj7. The draft treated Jazzomat's 'Gj7' as a typo. However, Learn Jazz Standards (Bb chart: Amaj7, i.e. concert Gmaj7) and Guitar Composer's Toolbox also have Gmaj7 after Am7 D7, and a forum analysis says the bridge goes up another half step from Gb. Gm7 at this spot is a common simplification in some fake books. I could not check it by ear.",
+   "CHANGED solo chorus bar 5: Eb7 D7 -> Am7 Ab7. CHANGED solo chorus bar 29: Am7 D7 -> Am7 Ab7. Jazzomat's 'Eb7 D7' appears only in its first A (its last A has Am7 D7), so it looks like an analysis quirk. On the head the band plays F/A Ab6 here (jazzleadsheets), the coda tag is built on Am7 Ab7(13), Guitar Composer's Toolbox has Am7 G#7, and jazzleadsheets says the D7 is often Ab6, Ab7 or G#m7. What Powell actually comps in the solos is not confirmed. Fake-book alternative: Am7 D7.",
+   "Head bars 2-3/5 and 26-27/29 (Gm7 G#m7 | Am7; F/A Ab6) follow the jazzleadsheets description of the recording. Beat placement is not given, and its use in the last A is assumed. Fake book: Gm7 C7 | Fmaj7 | ... | Am7 D7.",
+   "Head and solo bar 13: Bbm7 A7 (Jazzomat) vs Bbm7 Eb7 (Learn Jazz Standards and fake books). Not settled.",
+   "Head bar 20: the passing Adim7 is from jazzleadsheets. The beat-3 placement is a guess, and it is left out of the solo chorus.",
+   "Form labeling varies (ABCA on allsolos, A1(16) B A2 on Jazzomat, AABA on some guitar sites). The 32-bar chord layout is the same in every case.",
+   "Trades: the liner notes say only that the horns 'trade off with Max'. My inference: allsolos dates the drum solo from 4:49 and counts 1.13 choruses (about 36 bars, i.e. 32 + 4). This suggests 4-bar trades (tp/drums/ts/drums) over one chorus from about 4:08, with Max's last 4 counted into his solo, then one full drum chorus. Not verified by ear.",
+   "The intro reprise before the head out is assumed to be the same as the opening intro.",
+   "Take identification: master 10877-4 is 6:49 and alternate 10877-3 is 6:44. The allsolos and Jazzomat timings do not say which take they used (Jazzomat cites Brownie Disc 2, which holds both). Times are within a few seconds.",
+   "Start times for the head, trades, drum solo, intro reprise, head out and tag are computed from about 164 bpm and bar counts. They agree with the allsolos and Jazzomat boundaries to within 1-4 seconds.",
+   "Recording location: the draft said 'Capitol Studios'. jazzdisco gives Capitol Melrose Studios, Los Angeles. Added the 10-inch EmArcy MG 26043 issue of the master."
+  ],
+  "sources": [
+   "https://jazzomat.hfm-weimar.de/dbformat/synopsis/solo93.html",
+   "https://jazzleadsheets.com/joy-spring.html",
+   "https://jazzleadsheets.com/joy-spring-quintet.html",
+   "https://www.jazzdisco.org/clifford-brown/discography/",
+   "https://www.learnjazzstandards.com/wp-content/uploads/chord_charts/Joy_Spring_Bb_Instruments.pdf",
+   "https://www.guitarcomposerstoolbox.com/jazz-standards/joy-spring-in-f/",
+   "https://newyorkjazzworkshop.com/jazz-for-piano/our-analysis/joy-spring/",
+   "https://ethaniverson.com/two-richie-powell-intros/",
+   "https://www.allsolos.com/recording/403/joy-spring",
+   "https://www.allsolos.com/tune/325/joy-spring",
+   "https://www.allsolos.com/solo/1115/harold-land-tenor-sax-solo-on-joy-spring",
+   "https://www.allsolos.com/solo/1118/max-roach-drums-solo-on-joy-spring",
+   "https://groups.google.com/g/rec.music.bluenote/c/fe4vUgF5iKA",
+   "https://jazzy-life.com/wp-content/uploads/2020/12/JOY_SPRING_Intro_Ending.pdf (decoded: chord glyphs and barline positions taken from the PDF content stream)",
+   "Brownie: The Complete EmArcy Recordings of Clifford Brown booklet (track timings, take numbers, liner notes)"
+  ]
+ },
+ {
+  "songId": "i-want-more-dexter-gordon",
+  "identifiedRecording": "Dexter Gordon, \"I Want More\" (Gordon), track 3 on Dexter Calling... (Blue Note BLP 4083 / BST 84083). Recorded May 9, 1961 at Van Gelder Studio, Englewood Cliffs, NJ, take 32. Personnel: Dexter Gordon (ts), Kenny Drew (p), Paul Chambers (b), Philly Joe Jones (d). Jazzdisco confirms the session, personnel and take, and Evensmo lists tk32 under this session. Listed track lengths run 5:13 to 5:20 depending on pressing and reissue; streaming and album listings give 5:20. I am highly confident this is the user's 5:20 file. No other Gordon recording of the tune is about 5:20 long. (1) May 6, 1961, take 10, with Freddie Hubbard, Horace Parlan, George Tucker and Al Harewood: first issued as a CD bonus track on Doin' Allright (CDP 7 84077 2) and runs about 6:08 to 6:11. One listing shows 5:18, which is probably a mislabel. (2) July 9, 1964, live at Jazzhus Montmartre with Tete Montoliu, NHOP and Rune Carlsson (SteepleChase SCC 6015, \"I Want More\" / Dexter in Radioland Vol. 4): about 11:05. (3) A 1979 Havana live version is listed in one discography only; I could not verify it or find its length. The tune was written for the 1960 LA production of The Connection.",
+  "key": "Ab major (concert). Main evidence: the theme excerpt in the Gordon-compositions thesis has a 4-flat key signature, and AcousticBrainz's automatic analysis of a Blue Note issue gives G# (=Ab) major with chord key C minor (iii of Ab). Bars 5-8 move to Db (IV).",
+  "timeSignature": "4/4",
+  "approxTempoBpm": 225,
+  "feel": "Fast-medium swing (hard bop). Evensmo rates the tempo \"FM\".",
+  "blocks": [
+   {
+    "name": "intro",
+    "formLabels": "8-bar intro played by the band including tenor. Evensmo counts the opening theme as 'Straight 48 bars' (8 + 40) and does not label a separate rhythm-section intro. The thesis lists I Want More among Gordon's tunes with arranged 'extended intros'.",
+    "bars": [
+     {
+      "bar": 1,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ],
+      "note": "Inferred: a Bb-tenor intro snippet (1964 version) shows C7-F7, which is Bb7-Eb7 concert (II7-V7 in Ab). How the vamp splits across the 8 bars is a guess."
+     },
+     {
+      "bar": 2,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 3,
+      "chords": [
+       {
+        "symbol": "Eb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 4,
+      "chords": [
+       {
+        "symbol": "Eb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 5,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 6,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 7,
+      "chords": [
+       {
+        "symbol": "Eb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 8,
+      "chords": [
+       {
+        "symbol": "Eb7",
+        "beats": 4
+       }
+      ],
+      "note": "Leads into chorus bar 1 (Bbm7)"
+     }
+    ]
+   },
+   {
+    "name": "chorus",
+    "formLabels": "40-bar AA' form (thesis: A = 24 bars, A' = 16 bars). A = bars 1-24: a 16-bar first half (a = bars 1-8, b = bars 9-16) plus an 8-bar extension (bars 17-24) that slightly varies bars 9-16. A' = bars 25-40: bars 25-32 restate bars 1-8, and bars 33-40 are the closing section cadencing to Ab. Bars 1-8 and 25-32 are inferred from the notated theme; all other bars are a reasoned reconstruction.",
+    "bars": [
+     {
+      "bar": 1,
+      "chords": [
+       {
+        "symbol": "Bbm7",
+        "beats": 4
+       }
+      ],
+      "note": "ii of Ab (inferred from theme excerpt)"
+     },
+     {
+      "bar": 2,
+      "chords": [
+       {
+        "symbol": "Eb7",
+        "beats": 4
+       }
+      ],
+      "note": "The theme's second voice has A natural, so Eb7#11 color"
+     },
+     {
+      "bar": 3,
+      "chords": [
+       {
+        "symbol": "Abmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 4,
+      "chords": [
+       {
+        "symbol": "Abmaj7",
+        "beats": 4
+       }
+      ],
+      "note": "Melody: chromatic pickup figure on beats 1-2 into bar 5; Bb7 or Bbm7-Eb7 on beats 3-4 is possible"
+     },
+     {
+      "bar": 5,
+      "chords": [
+       {
+        "symbol": "Ebm7",
+        "beats": 4
+       }
+      ],
+      "note": "Bars 5-8 are bars 1-4 moved up a 4th (theme sequence)"
+     },
+     {
+      "bar": 6,
+      "chords": [
+       {
+        "symbol": "Ab7",
+        "beats": 4
+       }
+      ],
+      "note": "D natural in the second voice, so Ab7#11"
+     },
+     {
+      "bar": 7,
+      "chords": [
+       {
+        "symbol": "Dbmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 8,
+      "chords": [
+       {
+        "symbol": "Dbmaj7",
+        "beats": 2
+       },
+       {
+        "symbol": "G7",
+        "beats": 2
+       }
+      ],
+      "note": "Beats 1-2 repeat bar 4's melodic figure up a 4th over Dbmaj7. The pickup on beat 4 implies G7b9 resolving to Cm7. Beats 3-4 are a guess."
+     },
+     {
+      "bar": 9,
+      "chords": [
+       {
+        "symbol": "Cm7",
+        "beats": 4
+       }
+      ],
+      "note": "Bars 9-24 are reconstructed (not found in any source)"
+     },
+     {
+      "bar": 10,
+      "chords": [
+       {
+        "symbol": "F7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 11,
+      "chords": [
+       {
+        "symbol": "Bbm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 12,
+      "chords": [
+       {
+        "symbol": "Eb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 13,
+      "chords": [
+       {
+        "symbol": "Cm7",
+        "beats": 2
+       },
+       {
+        "symbol": "F7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 14,
+      "chords": [
+       {
+        "symbol": "Bbm7",
+        "beats": 2
+       },
+       {
+        "symbol": "Eb7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 15,
+      "chords": [
+       {
+        "symbol": "Abmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 16,
+      "chords": [
+       {
+        "symbol": "Dm7b5",
+        "beats": 2
+       },
+       {
+        "symbol": "G7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 17,
+      "chords": [
+       {
+        "symbol": "Cm7",
+        "beats": 4
+       }
+      ],
+      "note": "Start of the 8-bar extension (a slight variation of bars 9-16)"
+     },
+     {
+      "bar": 18,
+      "chords": [
+       {
+        "symbol": "F7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 19,
+      "chords": [
+       {
+        "symbol": "Bbm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 20,
+      "chords": [
+       {
+        "symbol": "Eb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 21,
+      "chords": [
+       {
+        "symbol": "Cm7",
+        "beats": 2
+       },
+       {
+        "symbol": "F7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 22,
+      "chords": [
+       {
+        "symbol": "Bbm7",
+        "beats": 2
+       },
+       {
+        "symbol": "Eb7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 23,
+      "chords": [
+       {
+        "symbol": "Abmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 24,
+      "chords": [
+       {
+        "symbol": "Cm7",
+        "beats": 2
+       },
+       {
+        "symbol": "F7",
+        "beats": 2
+       }
+      ],
+      "note": "Turnaround into A'"
+     },
+     {
+      "bar": 25,
+      "chords": [
+       {
+        "symbol": "Bbm7",
+        "beats": 4
+       }
+      ],
+      "note": "A' starts: bars 25-32 restate bars 1-8"
+     },
+     {
+      "bar": 26,
+      "chords": [
+       {
+        "symbol": "Eb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 27,
+      "chords": [
+       {
+        "symbol": "Abmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 28,
+      "chords": [
+       {
+        "symbol": "Abmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 29,
+      "chords": [
+       {
+        "symbol": "Ebm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 30,
+      "chords": [
+       {
+        "symbol": "Ab7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 31,
+      "chords": [
+       {
+        "symbol": "Dbmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 32,
+      "chords": [
+       {
+        "symbol": "Dbmaj7",
+        "beats": 2
+       },
+       {
+        "symbol": "G7",
+        "beats": 2
+       }
+      ],
+      "note": "Same as bar 8 (beats 3-4 a guess)"
+     },
+     {
+      "bar": 33,
+      "chords": [
+       {
+        "symbol": "Cm7",
+        "beats": 4
+       }
+      ],
+      "note": "Bars 33-40 are reconstructed: the closing section cadencing to Ab"
+     },
+     {
+      "bar": 34,
+      "chords": [
+       {
+        "symbol": "F7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 35,
+      "chords": [
+       {
+        "symbol": "Bbm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 36,
+      "chords": [
+       {
+        "symbol": "Eb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 37,
+      "chords": [
+       {
+        "symbol": "Abmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 38,
+      "chords": [
+       {
+        "symbol": "Fm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 39,
+      "chords": [
+       {
+        "symbol": "Bbm7",
+        "beats": 2
+       },
+       {
+        "symbol": "Eb7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 40,
+      "chords": [
+       {
+        "symbol": "Cm7",
+        "beats": 2
+       },
+       {
+        "symbol": "F7",
+        "beats": 2
+       }
+      ],
+      "note": "Turnaround back to bar 1 (Bbm7); after the last head it goes to the outro"
+     }
+    ]
+   },
+   {
+    "name": "outro",
+    "formLabels": "8 bars after the last head. Evensmo counts the closing theme as 'Straight 48 bars' with no coda, read here as the 40-bar head plus 8 bars, assumed to reprise the intro vamp and end on Ab. Alternative reading: the 8-bar intro is played again before the out-head, and the tune ends on chorus bar 40 or 37.",
+    "bars": [
+     {
+      "bar": 1,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ],
+      "note": "Assumed to reprise the intro vamp; not confirmed by any source"
+     },
+     {
+      "bar": 2,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 3,
+      "chords": [
+       {
+        "symbol": "Eb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 4,
+      "chords": [
+       {
+        "symbol": "Eb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 5,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 6,
+      "chords": [
+       {
+        "symbol": "Bb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 7,
+      "chords": [
+       {
+        "symbol": "Eb7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 8,
+      "chords": [
+       {
+        "symbol": "Abmaj7",
+        "beats": 4
+       }
+      ],
+      "note": "Final chord, guessed (could be Ab6/9 or a held Eb7 vamp)"
+     }
+    ]
+   }
+  ],
+  "sections": [
+   {
+    "name": "Intro",
+    "block": "intro",
+    "choruses": "1 (8 bars; part of Evensmo's 'Straight 48 bars' opening)",
+    "approxStart": "0:00"
+   },
+   {
+    "name": "Head in",
+    "block": "chorus",
+    "choruses": "1 (40 bars)",
+    "approxStart": "unknown (estimated ~0:09 at ~225 bpm)"
+   },
+   {
+    "name": "Sax solo",
+    "block": "chorus",
+    "choruses": "3 (Evensmo: 'solo 3 choruses of 40 bars')",
+    "approxStart": "unknown (estimated ~0:51)"
+   },
+   {
+    "name": "Piano solo",
+    "block": "chorus",
+    "choruses": "unknown (probably 2, inferred from track length at ~225 bpm)",
+    "approxStart": "unknown (estimated ~2:59)"
+   },
+   {
+    "name": "Head out",
+    "block": "chorus",
+    "choruses": "1 (40 bars, part of Evensmo's closing 'Straight 48 bars')",
+    "approxStart": "unknown (estimated ~4:24)"
+   },
+   {
+    "name": "Outro",
+    "block": "outro",
+    "choruses": "1 (8 bars; the rest of the closing 48 bars, see uncertainties)",
+    "approxStart": "unknown (estimated ~5:07)"
+   }
+  ],
+  "uncertainties": [
+   "CHANGED chorus bar 8: Dm7b5 (2) | G7 (2) -> Dbmaj7 (2) | G7 (2). I re-read the thesis's notated excerpt myself. Bar 8 has no B natural and no Db: beats 1-2 are bar 4's chromatic pickup figure moved up a 4th, which fits Dbmaj7 just as bar 4 fits Abmaj7. The two-note pickup on beat 4 fits G7(b9) resolving to Cm7. Beats 3-4 are still a guess; Dm7b5-G7 for the whole bar also fits the melody's chord tones, so it remains a valid alternative.",
+   "CHANGED chorus bar 32: Dbm7 (2) | Gb7 (2) -> Dbmaj7 (2) | G7 (2), the same as bar 8. A' restates the first 8 bars, and the draft's own bar 33 (Cm7) equals bar 9. A backdoor Gb7 resolving to Cm7 was inconsistent. The draft's note that bars 32-40 were reconstructed now reads 33-40.",
+   "CHANGED approxTempoBpm: 220 -> 225, to match the draft's own start-time estimates. Those were computed at about 225: 296 bars x 4 beats at 225 = 5:16, plus the final chord, about 5:20. AcousticBrainz reports 115 BPM for a Blue Note issue, which is probably half of about 230. Tempo is not measured from the track.",
+   "CHANGED sax-solo start estimate: ~0:52 -> ~0:51 (recomputed at 225 bpm). The other start times are kept; all of them are estimates, not sourced.",
+   "VERIFIED (Evensmo solography, my own text extraction): under May 9, 1961, 'tk32 I Want More: Straight 48 bars to solo 3 choruses of 40 bars. Straight 48 bars. (FM)'. The columns line up correctly for this session. For the May 6 session (tk10), the columns are scrambled, but the aligned reading is 'Solo 3 choruses of 40 bars. (FM)'.",
+   "VERIFIED (thesis p. 51, my own reading): AA' songform, A = 24 bars (16 + an 8-bar extension that slightly varies the preceding 8 bars) and A' = 16 bars, giving a 40-bar chorus. The tune is listed among those with arranged extended intros. The thesis gives no chord symbols for this tune.",
+   "KEY still disputed: the thesis excerpt has 4 flats, but the tenor and trumpet are written on identical treble staves. That would also fit Bb-transposed parts (same written notes sounding an octave apart), and then the concert key would be Gb with every chord a whole step lower. I keep Ab concert because the thesis's chord examples (for example For Regulars Only) are in bass clef and concert pitch, and because AcousticBrainz independently detects G#/Ab major (chord key C minor). Listening is needed to confirm.",
+   "Intro: Evensmo writes 'Straight 48 bars' rather than 'Intro 8 bars to straight 40', which suggests the tenor plays in the 8-bar intro (an arranged intro). The chords Bb7/Eb7 come from a Bb-tenor snippet of the 1964 version (C7-F7 written); the 1961 intro may differ. How the vamp is laid out across the 8 bars is a guess.",
+   "Outro: Evensmo mentions no coda, only 'Straight 48 bars' for the closing theme. The extra 8 bars may therefore come BEFORE the out-head (an intro reprise) rather than after it. I kept the draft's head-then-8-bar-outro layout because the user's section list includes an Outro. Its content and final chord are undocumented.",
+   "Piano solo length: Evensmo covers only the tenor. Two piano choruses fit 5:20 at about 225 bpm. Any bass solo or trading is unknown and would change the estimate.",
+   "Bars 9-24 and 33-40 are generic idiomatic reconstructions (iii-VI-ii-V motion to Ab). The real changes probably have more altered or chromatic chords; the thesis notes 11ths, b5s, b9s and #9s in the melody. No published lead sheet or chord list was found. Possible checks: the Aebersold Vol. 82 listing (unconfirmed), or Andrew Frankhouse's transcription of the Doin' Allright solo (concert and Bb PDFs). I extracted that PDF's text: it has no chord symbols and no key signature.",
+   "Track length: Discogs pressings list 5:13 to 5:15, while other listings give 5:17 or 5:20. All fit the user's 5:20 file. The 1979 Havana version could not be verified in jazzdisco."
+  ],
+  "sources": [
+   "http://www.jazzarcheology.com/artists/dexter_gordon.pdf (Jan Evensmo solography; text extracted and the May 6/May 9, 1961 entries read directly)",
+   "https://www.danishmusicologyonline.dk/arkiv/arkiv_col_Legno_pdf/cl_2003/cl_2003_02_dextergordonartikel_ocr.pdf (thesis pp. 33, 51-52; page images examined directly)",
+   "https://www.jazzdisco.org/dexter-gordon/discography/",
+   "https://acousticbrainz.org/7b10c25d-371d-4cbe-9c33-34db8ddca42c (search-result summary: G# major, chord key C minor, 115 BPM)",
+   "https://andrewfrankhouse.com/resources/ and https://andrewfrankhouse.com/resources/pdf/iwantmorec.pdf (Doin' Allright solo transcription; no chord symbols found)",
+   "https://en.wikipedia.org/wiki/Dexter_Calling...",
+   "https://en.wikipedia.org/wiki/I_Want_More_(album)",
+   "https://www.discogs.com/release/10613100-Dexter-Gordon-Dexter-Calling-- (search snippet: track timings)",
+   "https://jazzizdiscovery.com/?p=19225"
+  ]
+ },
+ {
+  "songId": "so-what-miles-davis-kind-of-blue-1959",
+  "identifiedRecording": "Miles Davis, \"So What\", opening track of Kind of Blue (Columbia CL 1355 / CS 8163). Recorded March 2, 1959 at Columbia 30th Street Studio in New York and released August 17, 1959. Producer: Irving Townsend. Personnel: Miles Davis (trumpet), John Coltrane (tenor sax), Julian \"Cannonball\" Adderley (alto sax), Bill Evans (piano), Paul Chambers (bass), Jimmy Cobb (drums). Wikipedia lists the track at 9:22 and AllMusic at 9:25, so the user's 9:23 file is almost certainly the standard album master. I am highly confident it is this recording. The Jazzomat solo positions (Miles 1:27-3:19, Coltrane 3:20-5:07, Cannonball 5:07-6:53) fit a track of about 9:22.",
+  "key": "D Dorian (written Dm7). The bridge moves up a half step to Eb Dorian (Ebm7).",
+  "timeSignature": "4/4",
+  "approxTempoBpm": 138,
+  "feel": "Medium swing in a modal style, about 136-142 bpm, after a free-time (rubato) piano and bass intro. The head is a call and response: the bass plays the melody, and piano and later the horns answer with two-chord \"So What chord\" (quartal) figures.",
+  "blocks": [
+   {
+    "name": "intro",
+    "formLabels": "Rubato piano and bass duet, about 0:00-0:34, usually credited to Gil Evans. Free time, so the bar count is approximate.",
+    "bars": [
+     {
+      "bar": 1,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ],
+      "note": "REASONED, NOT SOURCED: rubato quartal colours around D Dorian"
+     },
+     {
+      "bar": 2,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ],
+      "note": "reasoned"
+     },
+     {
+      "bar": 3,
+      "chords": [
+       {
+        "symbol": "Ebm7",
+        "beats": 4
+       }
+      ],
+      "note": "reasoned: colour from the half-step-up (bridge) area"
+     },
+     {
+      "bar": 4,
+      "chords": [
+       {
+        "symbol": "Ebm7",
+        "beats": 4
+       }
+      ],
+      "note": "reasoned"
+     },
+     {
+      "bar": 5,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ],
+      "note": "reasoned"
+     },
+     {
+      "bar": 6,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ],
+      "note": "reasoned"
+     },
+     {
+      "bar": 7,
+      "chords": [
+       {
+        "symbol": "Ebm7",
+        "beats": 4
+       }
+      ],
+      "note": "reasoned"
+     },
+     {
+      "bar": 8,
+      "chords": [
+       {
+        "symbol": "N.C.",
+        "beats": 4
+       }
+      ],
+      "note": "fermata or held sound, then the bass picks up the head in tempo at about 0:34"
+     }
+    ]
+   },
+   {
+    "name": "chorus",
+    "formLabels": "AABA, 32 bars: A1 = bars 1-8 Dm7, A2 = bars 9-16 Dm7, B = bars 17-24 Ebm7, A3 = bars 25-32 Dm7",
+    "bars": [
+     {
+      "bar": 1,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ],
+      "note": "A1. In the head, the bass states the melody and the piano answers with the So What chord pair."
+     },
+     {
+      "bar": 2,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 3,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 4,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 5,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 6,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 7,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 8,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 9,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ],
+      "note": "A2. In the head, the horns take over the answering figure."
+     },
+     {
+      "bar": 10,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 11,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 12,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 13,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 14,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 15,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 16,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 17,
+      "chords": [
+       {
+        "symbol": "Ebm7",
+        "beats": 4
+       }
+      ],
+      "note": "B (bridge), Eb Dorian"
+     },
+     {
+      "bar": 18,
+      "chords": [
+       {
+        "symbol": "Ebm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 19,
+      "chords": [
+       {
+        "symbol": "Ebm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 20,
+      "chords": [
+       {
+        "symbol": "Ebm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 21,
+      "chords": [
+       {
+        "symbol": "Ebm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 22,
+      "chords": [
+       {
+        "symbol": "Ebm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 23,
+      "chords": [
+       {
+        "symbol": "Ebm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 24,
+      "chords": [
+       {
+        "symbol": "Ebm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 25,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ],
+      "note": "A3, back to D Dorian"
+     },
+     {
+      "bar": 26,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 27,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 28,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 29,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 30,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 31,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 32,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "ending",
+    "formLabels": "Coda after the out-head: walking bass over AA (D Dorian), fading out. Sixteen bars are written here, but the fade may end before bar 16.",
+    "bars": [
+     {
+      "bar": 1,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ],
+      "note": "walking bass on D Dorian; So What answering figures may continue"
+     },
+     {
+      "bar": 2,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 3,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 4,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 5,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 6,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 7,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 8,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 9,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 10,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 11,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 12,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 13,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 14,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 15,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 16,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ],
+      "note": "fade out"
+     }
+    ]
+   }
+  ],
+  "sections": [
+   {
+    "name": "Intro",
+    "block": "intro",
+    "choruses": "n/a (rubato intro, played once)",
+    "approxStart": "0:00"
+   },
+   {
+    "name": "Head",
+    "block": "chorus",
+    "choruses": "1. In the first A, piano and bass only (piano answers the bass melody); horns join for A2, B and A3.",
+    "approxStart": "0:34"
+   },
+   {
+    "name": "Trumpet solo",
+    "block": "chorus",
+    "choruses": "2 (Miles Davis)",
+    "approxStart": "1:27"
+   },
+   {
+    "name": "Tenor sax solo",
+    "block": "chorus",
+    "choruses": "2 (John Coltrane)",
+    "approxStart": "3:20"
+   },
+   {
+    "name": "Alto sax solo",
+    "block": "chorus",
+    "choruses": "2 (Cannonball Adderley)",
+    "approxStart": "5:07"
+   },
+   {
+    "name": "Piano solo",
+    "block": "chorus",
+    "choruses": "1 (Bill Evans), with horn backgrounds behind him",
+    "approxStart": "6:53"
+   },
+   {
+    "name": "Bass solo",
+    "block": "chorus",
+    "choruses": "1 out-head chorus, then the 'ending' block (walking bass over AA, fading out). The out-head opens with an A of walking bass and piano, then the horns join for A, B and A. This is not a true bass solo.",
+    "approxStart": "7:48"
+   }
+  ],
+  "uncertainties": [
+   "The draft was checked against new sources and held up. No chord or bar count changed. Only the edits below were made.",
+   "CHANGED: Head approxStart 0:33 -> 0:34. Ethan Hein's analysis says the tune proper starts at 0:34; another listening note says about 0:35. The draft's 0:33 was its own back-calculation.",
+   "CHANGED: The intro formLabels now say the intro is 'usually credited to Gil Evans' instead of stating it as fact. Wikipedia credits Gil Evans, but Bill Evans is quoted as saying nothing was written out for So What, and that the opening tremolo was his own addition. Authorship is disputed. This has no effect on the chords.",
+   "CHANGED: The 'Bass solo' (out-head) description is more specific. jazzlanguageworkbooks lists, after the piano solo: walking bass over an A with the piano carrying the melody/answers as a transition, then the out-head ABA with horns, then a coda of walking bass over AA, then a fade. I read the transition A as the first A of the out-chorus, which keeps it at 32 bars. It could instead be an extra 8 bars before a full out-chorus. Check by ear. If it is extra, the fade comes about 3-4 s later than the estimates.",
+   "INTRO CHORDS ARE STILL NOT SOURCED. No new source (Wikipedia, Ethan Hein, New York Jazz Workshop, jazzify, jazzlanguageworkbooks) gives chord symbols for the rubato intro. New York Jazz Workshop only says it is built on fourths and major thirds. Jason Lyon's transcription exists only as an image. The 8-bar Dm7/Ebm7 outline is a reasoned placeholder. Free time makes any bar count a guess.",
+   "There is no Paul Chambers bass solo on this track. The user's 'Bass solo' is the out-head plus the fading coda, and is mapped to chorus + ending.",
+   "Chorus counts are confirmed independently: allsolos.com gives 2 choruses each for Miles, Coltrane and Cannonball (136/139/139 bpm), and jazzlanguageworkbooks gives 2/2/2 and 1 piano chorus with backgrounds. A school guide's 4 choruses and some writers' 1 chorus for Cannonball are contradicted by the Jazzomat timings (5:07-6:53).",
+   "Estimated, not sourced: piano solo start 6:53 (taken from the end of Cannonball's Jazzomat segment) and out-head start about 7:48 (6:53 plus about 54 s for 32 bars at about 140 bpm). Out-head plus 16-bar coda would end around 9:08, and the fade runs to about 9:22, so the coda may run a few bars longer or shorter than 16 before it is inaudible.",
+   "Jazzomat solo timestamps come from its own copy of the track. Small offsets (about 1-3 s) against the user's MP3 are possible. AllMusic lists 9:25 and Wikipedia 9:22.",
+   "Chord symbols: the recording and most fake books show only Dm7 (A sections) and Ebm7 (bridge). New York Jazz Workshop describes the answering pair as Em7(11) moving down to Dm7(11), and Ethan Hein as two minor-seventh chords a whole step apart. These are passing quartal 'So What' voicings inside the mode, so they are left out of the bar-level changes. Some fake books write Dm9/Dm11 and Ebm9/Ebm11.",
+   "Pitch: older pressings of side one were mastered from a tape running slightly slow at recording, so they play back sharp of concert D. Later reissues corrected this. A sharp-sounding MP3 is a pressing difference, not a different key.",
+   "Tempo: 136 (allsolos, Miles), 139 (allsolos, Coltrane/Cannonball), 138.5-142.2 (Jazzomat). The band speeds up slightly, so 138 is an average."
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/So_What_(Miles_Davis_composition)",
+   "https://ethanhein.com/wp/2020/so-what/",
+   "https://newyorkjazzworkshop.com/jazz-for-piano/our-analysis/so-what/",
+   "https://newyorkjazzworkshop.com/small-group-jazz-performances-part-ii/",
+   "https://en.jazzify.jp/blog/album-kind-of-blue/",
+   "https://www.allmusic.com/album/kind-of-blue-mw0000191710",
+   "https://www.allsolos.com/recording/38/so-what",
+   "https://jazzlanguageworkbooks.com/so-what-miles-davis-analysis",
+   "https://jazzomat.hfm-weimar.de/dbformat/synopsis/solo323.html",
+   "https://jazzomat.hfm-weimar.de/dbformat/synopsis/solo233.html",
+   "https://jazzomat.hfm-weimar.de/dbformat/synopsis/solo48.html",
+   "https://jasonlyonmusic.com/2015/06/08/so-what-intro/",
+   "https://www.thejazzpianosite.com/jazz-piano-lessons/jazz-chord-voicings/so-what-chord/"
+  ]
+ },
+ {
+  "songId": "an-afternoon-in-paris-kenny-barron",
+  "identifiedRecording": "Kenny Barron Quartet, \"Invitation\" (Criss Cross Jazz Criss 1044 CD, released 1991). Recorded December 20, 1990 at Van Gelder Studio, Englewood Cliffs, NJ. Kenny Barron (piano), Ralph Moore (tenor sax), David Williams (bass), Lewis Nash (drums). \"(An) Afternoon in Paris\" (John Lewis) is track 6 and is listed at 7:18 on Wikipedia and Jazz Music Archives. jazzdisco.org lists it on this session as \"An Afternoon In Paris\" and shows no other Barron-led session of the tune. Confidence is high: it is the only Kenny Barron recording of the tune I found with a saxophone and a bass player, and the listed length is exactly 7:18, the same as the user's file. The 2015 duo \"Interplay\" with Mark Sherman on vibraphone has no sax or bass, so it does not match.",
+  "key": "C major",
+  "timeSignature": "4/4",
+  "approxTempoBpm": 170,
+  "feel": "medium swing (described as gently swinging)",
+  "blocks": [
+   {
+    "name": "chorus",
+    "formLabels": "AABA, 32 bars: A1 = bars 1-8, A2 = bars 9-16, B (bridge) = bars 17-24, A3 = bars 25-32. In each A the key steps down by whole tones (C, then Bb, then Ab) through ii-V moves, then returns to C.",
+    "bars": [
+     {
+      "bar": 1,
+      "chords": [
+       {
+        "symbol": "Cmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 2,
+      "chords": [
+       {
+        "symbol": "Cm7",
+        "beats": 2
+       },
+       {
+        "symbol": "F7",
+        "beats": 2
+       }
+      ],
+      "note": "ii-V to Bb"
+     },
+     {
+      "bar": 3,
+      "chords": [
+       {
+        "symbol": "Bbmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 4,
+      "chords": [
+       {
+        "symbol": "Bbm7",
+        "beats": 2
+       },
+       {
+        "symbol": "Eb7",
+        "beats": 2
+       }
+      ],
+      "note": "ii-V to Ab"
+     },
+     {
+      "bar": 5,
+      "chords": [
+       {
+        "symbol": "Abmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 6,
+      "chords": [
+       {
+        "symbol": "Dm7b5",
+        "beats": 2
+       },
+       {
+        "symbol": "G7b9",
+        "beats": 2
+       }
+      ],
+      "note": "Some charts have Dm7 G7, G7#9 or plain G7"
+     },
+     {
+      "bar": 7,
+      "chords": [
+       {
+        "symbol": "Cmaj7",
+        "beats": 2
+       },
+       {
+        "symbol": "Am7",
+        "beats": 2
+       }
+      ],
+      "note": "I-vi turnaround; some charts have Cmaj7 for the whole bar"
+     },
+     {
+      "bar": 8,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 2
+       },
+       {
+        "symbol": "G7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 9,
+      "chords": [
+       {
+        "symbol": "Cmaj7",
+        "beats": 4
+       }
+      ],
+      "note": "A2"
+     },
+     {
+      "bar": 10,
+      "chords": [
+       {
+        "symbol": "Cm7",
+        "beats": 2
+       },
+       {
+        "symbol": "F7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 11,
+      "chords": [
+       {
+        "symbol": "Bbmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 12,
+      "chords": [
+       {
+        "symbol": "Bbm7",
+        "beats": 2
+       },
+       {
+        "symbol": "Eb7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 13,
+      "chords": [
+       {
+        "symbol": "Abmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 14,
+      "chords": [
+       {
+        "symbol": "Dm7b5",
+        "beats": 2
+       },
+       {
+        "symbol": "G7b9",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 15,
+      "chords": [
+       {
+        "symbol": "Cmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 16,
+      "chords": [
+       {
+        "symbol": "Cmaj7",
+        "beats": 4
+       }
+      ],
+      "note": "Second ending stays on C going into the bridge; players often add a ii-V such as Em7 A7 here"
+     },
+     {
+      "bar": 17,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ],
+      "note": "Bridge; often played over a G pedal (Dm7/G), at least in the head"
+     },
+     {
+      "bar": 18,
+      "chords": [
+       {
+        "symbol": "G7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 19,
+      "chords": [
+       {
+        "symbol": "Cmaj7/E",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 20,
+      "chords": [
+       {
+        "symbol": "A7",
+        "beats": 4
+       }
+      ],
+      "note": "VI7; the Real Book version has Am7 here"
+     },
+     {
+      "bar": 21,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 22,
+      "chords": [
+       {
+        "symbol": "G7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 23,
+      "chords": [
+       {
+        "symbol": "Cmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 24,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 2
+       },
+       {
+        "symbol": "G7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 25,
+      "chords": [
+       {
+        "symbol": "Cmaj7",
+        "beats": 4
+       }
+      ],
+      "note": "A3"
+     },
+     {
+      "bar": 26,
+      "chords": [
+       {
+        "symbol": "Cm7",
+        "beats": 2
+       },
+       {
+        "symbol": "F7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 27,
+      "chords": [
+       {
+        "symbol": "Bbmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 28,
+      "chords": [
+       {
+        "symbol": "Bbm7",
+        "beats": 2
+       },
+       {
+        "symbol": "Eb7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 29,
+      "chords": [
+       {
+        "symbol": "Abmaj7",
+        "beats": 4
+       }
+      ]
+     },
+     {
+      "bar": 30,
+      "chords": [
+       {
+        "symbol": "Dm7b5",
+        "beats": 2
+       },
+       {
+        "symbol": "G7b9",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 31,
+      "chords": [
+       {
+        "symbol": "Cmaj7",
+        "beats": 2
+       },
+       {
+        "symbol": "Am7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 32,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 2
+       },
+       {
+        "symbol": "G7",
+        "beats": 2
+       }
+      ],
+      "note": "Turnaround into the next chorus"
+     }
+    ]
+   },
+   {
+    "name": "ending",
+    "formLabels": "Tag after the last chorus of the head out (after chorus bar 32). It repeats the bar 31-32 I-vi-ii-V turnaround twice and closes on C. This is a reasoned guess, not taken from any source.",
+    "bars": [
+     {
+      "bar": 1,
+      "chords": [
+       {
+        "symbol": "Cmaj7",
+        "beats": 2
+       },
+       {
+        "symbol": "Am7",
+        "beats": 2
+       }
+      ],
+      "note": "Played after chorus bar 32, repeating bars 31-32"
+     },
+     {
+      "bar": 2,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 2
+       },
+       {
+        "symbol": "G7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 3,
+      "chords": [
+       {
+        "symbol": "Cmaj7",
+        "beats": 2
+       },
+       {
+        "symbol": "Am7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 4,
+      "chords": [
+       {
+        "symbol": "Dm7",
+        "beats": 2
+       },
+       {
+        "symbol": "G7",
+        "beats": 2
+       }
+      ]
+     },
+     {
+      "bar": 5,
+      "chords": [
+       {
+        "symbol": "Cmaj7",
+        "beats": 4
+       }
+      ],
+      "note": "Final chord, probably held"
+     }
+    ]
+   }
+  ],
+  "sections": [
+   {
+    "name": "Head in",
+    "block": "chorus",
+    "choruses": "unknown",
+    "approxStart": "unknown"
+   },
+   {
+    "name": "Bass solo",
+    "block": "chorus",
+    "choruses": "unknown",
+    "approxStart": "unknown"
+   },
+   {
+    "name": "Sax solo",
+    "block": "chorus",
+    "choruses": "unknown",
+    "approxStart": "unknown"
+   },
+   {
+    "name": "Piano solo",
+    "block": "chorus",
+    "choruses": "unknown",
+    "approxStart": "unknown"
+   },
+   {
+    "name": "Trading fours",
+    "block": "chorus",
+    "choruses": "unknown",
+    "approxStart": "unknown"
+   },
+   {
+    "name": "Head out",
+    "block": "chorus",
+    "choruses": "unknown",
+    "approxStart": "unknown"
+   },
+   {
+    "name": "Ending",
+    "block": "ending",
+    "choruses": "unknown",
+    "approxStart": "unknown"
+   }
+  ],
+  "uncertainties": [
+   "CHANGED approxTempoBpm 200 -> 170, and feel 'medium-up swing' -> 'medium swing'. Stephen Cook's AllMusic review (seen through a reprint, since AllMusic returned 403) says the group plays the tune in a gently swinging way, which points to a medium tempo, not medium-up. 170 is still a guess and needs checking against the file. At 170 bpm one 32-bar chorus lasts about 45 s, so 7:18 holds about 9-10 choruses plus the ending, for example 1 head in, 1 bass, 2 sax, 2 piano, 1-2 of fours, 1 head out.",
+   "CHANGED the ending block's formLabels and the bar 1 note. The draft said the tag 'starts where chorus bar 31 would be', which clashes with mapping the Head out to the full 32-bar chorus. The ending now follows chorus bar 32 and repeats the bars 31-32 turnaround. The chords are unchanged and remain entirely a reconstruction. No source describes how this recording ends. Other common endings are a three-times tag of bars 29-30 (Abmaj7 | Dm7b5 G7) or a short vamp.",
+   "Recording identification checked independently and kept. jazzdisco.org's Kenny Barron discography lists the tune ('An Afternoon In Paris') only on the 20 Dec 1990 Invitation session. Wikipedia and Jazz Music Archives give 7:18 as track 6. One search summary called it the fifth track, but both tracklists put it sixth.",
+   "The recording is identified from discography data, not from listening. No source transcribes this track's chords, so the chord block is the standard lead-sheet version. Barron may use different substitutions.",
+   "Bar 6 of each A (and bars 14 and 30) is kept as Dm7b5 G7b9. A transposed Real Book listing on guitarcomposerstoolbox (RB in E, mapped back to C) shows the half-diminished chord here, which agrees with jazzvideolessons. 4times8 and impromastering give Dm7 with G7#9 or G7. Still disputed between sources.",
+   "Bars 7 and 31 are kept as Cmaj7 Am7. The transposed Real Book listing includes the vi chord (Am7) after the I, but 4times8 holds Cmaj7 for the whole bar.",
+   "Bridge bar 20: 4times8 has A7, while the transposed Real Book listing reads as Am7. Kept A7, which is unconfirmed for this recording. Bar 19 is Cmaj7/E in 4times8; it could also be played as Em7.",
+   "Bridge pedal: learnjazzstandards.com says the bridge often pedals on concert G during the head, but not in the last two-bar turnaround (bars 23-24). Whether Barron's band does this is unconfirmed.",
+   "jazzvideolessons mentions a chromatic ii-V (C#m7 F#7) without placing it in the form. No chart I could reach places it, so it is not included.",
+   "jazzvideolessons says a Kenny Barron version has the bass playing 'in two', but it does not name the recording.",
+   "No source gives chorus counts or start times for any section. They must be checked against the user's file. The user's order, with the bass solo before the sax and piano solos, is unusual and unconfirmed.",
+   "No source mentions an intro. The user's section list starts with the head, so no intro block is included. If the track opens with a short piano intro, it is not represented here.",
+   "The Wikipedia fetch named a producer that may be wrong (Criss Cross sessions are usually produced by Gerry Teekens), so the producer is left out."
+  ],
+  "sources": [
+   "https://www.jazzdisco.org/kenny-barron/discography/",
+   "https://en.wikipedia.org/wiki/Invitation_(Kenny_Barron_album)",
+   "https://jazzmusicarchives.com/album/kenny-barron/invitation",
+   "https://xiapi.quotsoft.net/album/b5/b5ILe76c3/ (reprint of the AllMusic review by Stephen Cook)",
+   "https://4times8.com/song/afternoon-in-paris",
+   "https://guitarcomposerstoolbox.com/jazz-standards/afternoon-in-paris-rb-in-e/",
+   "https://www.guitarcomposerstoolbox.com/jazz-standards/afternoon-in-paris-in-c",
+   "https://jazzvideolessons.net/standards-studies/afternoon-in-paris/",
+   "https://www.learnjazzstandards.com/jazz-standards/afternoon-in-paris/",
+   "https://nielsdalgaard.com/jazz-standards/afternoon-in-paris/",
+   "https://standardrepertoire.com/afternoon-in-paris.html"
+  ]
+ }
+]
