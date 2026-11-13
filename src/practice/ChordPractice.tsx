@@ -60,6 +60,7 @@ export default function ChordPractice({ settings, update, settingsOpen, closeSet
   const start = async () => {
     if (problem) return
     setPlaying(true)
+    // false = Stop was pressed (or the screen closed) while audio was still unlocking.
     await startChordSession({
       bpm: settings.bpm,
       groove: settings.groove,
@@ -160,13 +161,37 @@ export default function ChordPractice({ settings, update, settingsOpen, closeSet
 
       <BpmControl bpm={settings.bpm} onChange={changeBpm} />
 
-      <button className={playing ? 'play-btn stop' : 'play-btn'} onClick={playing ? stop : start} disabled={!!problem}>
+      <button className={playing ? 'play-btn stop' : 'play-btn'} onClick={playing ? stop : start} disabled={!playing && !!problem}>
         {playing ? 'Stop' : 'Start'}
       </button>
       {!playing && !problem && <p className="hint">Tap the chord to skip to the next one.</p>}
 
       <ChordSettingsSheet open={settingsOpen} onClose={closeSettings} settings={settings} update={update} changeBpm={changeBpm} />
     </div>
+  )
+}
+
+/** Tempo field that lets you type freely and only applies (and clamps) the value when you finish. */
+function BpmInput({ bpm, onCommit }: { bpm: number; onCommit: (n: number) => void }) {
+  const [draft, setDraft] = useState(String(bpm))
+  useEffect(() => setDraft(String(bpm)), [bpm])
+  const commit = () => {
+    const n = Number(draft)
+    if (draft.trim() && Number.isFinite(n)) onCommit(n)
+    else setDraft(String(bpm))
+  }
+  return (
+    <input
+      className="num"
+      type="text"
+      inputMode="numeric"
+      pattern="[0-9]*"
+      value={draft}
+      onChange={(e) => setDraft(e.target.value.replace(/[^0-9]/g, ''))}
+      onBlur={commit}
+      onKeyDown={(e) => e.key === 'Enter' && (e.currentTarget as HTMLInputElement).blur()}
+      aria-label="Tempo in BPM"
+    />
   )
 }
 
@@ -248,15 +273,7 @@ function ChordSettingsSheet({
       <Section title="Sound">
         <div className="row">
           <span className="row-label">Tempo (saved for next time)</span>
-          <input
-            className="num"
-            type="number"
-            inputMode="numeric"
-            min={30}
-            max={260}
-            value={settings.bpm}
-            onChange={(e) => e.target.value && changeBpm(Number(e.target.value))}
-          />
+          <BpmInput bpm={settings.bpm} onCommit={changeBpm} />
         </div>
         <div className="chips">
           {GROOVES.map((g) => (

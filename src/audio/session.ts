@@ -8,19 +8,60 @@ import { click, getInstruments, playPiano, releaseAll, unlockAudio } from './ins
 // ---------------------------------------------------------------------------
 // Screen wake lock while something is playing (supported in recent iOS; ignored elsewhere).
 
-let wakeLock: { release: () => Promise<void> } | null = null
-async function keepAwake(on: boolean) {
+interface Sentinel extends EventTarget {
+  release: () => Promise<void>
+}
+let wakeLock: Sentinel | null = null
+let wantAwake = false
+let requesting = false
+
+async function acquireWakeLock() {
+  if (!wantAwake || wakeLock || requesting || document.hidden) return
+  const nav = navigator as Navigator & { wakeLock?: { request: (t: 'screen') => Promise<Sentinel> } }
+  if (!nav.wakeLock) return
+  requesting = true
   try {
-    if (on && !wakeLock) {
-      const nav = navigator as Navigator & { wakeLock?: { request: (t: 'screen') => Promise<{ release: () => Promise<void> }> } }
-      wakeLock = (await nav.wakeLock?.request('screen')) ?? null
-    } else if (!on && wakeLock) {
-      await wakeLock.release()
-      wakeLock = null
+    const sentinel = await nav.wakeLock.request('screen')
+    if (!wantAwake) {
+      void sentinel.release()
+      return
     }
+    wakeLock = sentinel
+    // iOS/Chrome drop the lock when the app is backgrounded; forget it so we can re-request.
+    sentinel.addEventListener('release', () => {
+      if (wakeLock === sentinel) wakeLock = null
+    })
   } catch {
-    wakeLock = null
+    /* not allowed right now */
+  } finally {
+    requesting = false
   }
+}
+
+function keepAwake(on: boolean) {
+  wantAwake = on
+  if (on) void acquireWakeLock()
+  else if (wakeLock) {
+    const s = wakeLock
+    wakeLock = null
+    void s.release().catch(() => undefined)
+  }
+}
+
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) void acquireWakeLock()
+})
+
+// Bumped on every stop/start, so a start that was still waiting for audio to unlock
+// can tell the user pressed Stop (or left the screen) in the meantime.
+let generation = 0
+
+/** Unlock audio; false if something stopped playback while we waited. */
+async function begin(): Promise<boolean> {
+  const mine = ++generation
+  await unlockAudio()
+  getInstruments()
+  return mine === generation
 }
 
 // UI callbacks timed to the audio clock. Unlike Tone.Draw these are never dropped when late
@@ -46,8 +87,9 @@ function resetTransport() {
 }
 
 export function stopAll() {
+  generation++
   resetTransport()
-  void keepAwake(false)
+  keepAwake(false)
 }
 
 export function setBpm(bpm: number) {
@@ -82,9 +124,8 @@ export interface ChordSessionOptions {
 /** Live settings the running session reads every bar. */
 export const live = { groove: 'swing' as GrooveId, playChords: false }
 
-export async function startChordSession(o: ChordSessionOptions) {
-  await unlockAudio()
-  getInstruments()
+export async function startChordSession(o: ChordSessionOptions): Promise<boolean> {
+  if (!(await begin())) return false
   resetTransport()
   live.groove = o.groove
   live.playChords = o.playChords
@@ -129,7 +170,8 @@ export async function startChordSession(o: ChordSessionOptions) {
   }, '4n')
 
   transport.start('+0.15')
-  void keepAwake(true)
+  keepAwake(true)
+  return true
 }
 
 /** Hear a chord once (tap-to-preview when stopped). */
@@ -159,9 +201,8 @@ export interface MelodyPlayback {
   onDone: () => void
 }
 
-export async function playMelody(p: MelodyPlayback) {
-  await unlockAudio()
-  getInstruments()
+export async function playMelody(p: MelodyPlayback): Promise<boolean> {
+  if (!(await begin())) return false
   resetTransport()
   const transport = Tone.getTransport()
   transport.bpm.value = p.bpm
@@ -194,5 +235,6 @@ export async function playMelody(p: MelodyPlayback) {
   }, (lead + total) * beat + 0.3)
 
   transport.start('+0.15')
-  void keepAwake(true)
+  keepAwake(true)
+  return true
 }

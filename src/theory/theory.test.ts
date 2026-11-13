@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { QUALITIES, QUALITY_BY_ID, bestRoot, chordName, chordTones } from './chords'
-import { type DrillConfig, createDrill, iiVI } from './drill'
+import { type DrillConfig, createDrill, drillProblem, iiVI } from './drill'
 import { MAJOR_KEYS, MINOR_KEYS, keyOf, scale } from './keys'
 import { midiOf, parsePitch, pitchAscii, pitchClass, vexKey } from './notes'
 import { seeded } from './random'
@@ -42,6 +42,10 @@ describe('chord spelling', () => {
     expect(name(3, 'dim7')).toBe('D♯°7')
     expect(name(10, '7')).toBe('B♭7')
     expect(name(1, 'mmaj7')).toBe('C♯m(maj7)')
+    expect(name(0, 'dim7')).toBe('C°7')
+    expect(name(5, 'dim7')).toBe('F°7')
+    expect(name(11, 'aug')).toBe('B+')
+    expect(spell('B', 'aug')).toBe('B D# F##')
     expect(name(6, '7')).toBe('F♯7')
   })
 
@@ -52,11 +56,11 @@ describe('chord spelling', () => {
         const tones = chordTones({ root: bestRoot(pc, q), quality: q })
         for (const t of tones.filter((x) => Math.abs(x.pitch.acc) > 1)) {
           seen.push(`${q.id}:${t.role}`)
-          expect(['dim7:7', '7#9:9', '7alt:9'], `${q.id} on pc ${pc}`).toContain(`${q.id}:${t.role}`)
+          expect(['dim7:7', '7#9:9', '7alt:9', 'aug:5', 'maj7#5:5', '7#5:5'], `${q.id} on pc ${pc}`).toContain(`${q.id}:${t.role}`)
         }
       }
     }
-    expect(seen.length).toBeLessThan(10)
+    expect(seen.length).toBeLessThan(16)
   })
 
   it('spells every chord tone at the right pitch', () => {
@@ -128,6 +132,14 @@ describe('ii–V–I', () => {
       }
     }
     expect(found).toBe(true)
+  })
+
+  it('never uses a chord type the user turned off', () => {
+    const c = { ...cfg, families: { triads: true, sevenths: true, extended: false }, qualities: { m7: false } }
+    for (let s = 0; s < 100; s++) {
+      for (const p of iiVI(c, seeded(s))) expect(p.chord.quality.id).not.toBe('m7')
+    }
+    expect(drillProblem({ ...cfg, qualities: { m7: false } })).toMatch(/chord types/)
   })
 
   it('minor ii–V–i uses half-diminished ii', () => {

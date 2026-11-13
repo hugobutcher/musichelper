@@ -39,6 +39,7 @@ export function drillProblem(cfg: DrillConfig): string | null {
   }
   if (!cfg.iiviMajor && !cfg.iiviMinor) return 'Turn on major or minor ii–V–I in Settings.'
   if (!FAMILIES.some((f) => cfg.families[f])) return 'Turn on triads, sevenths or extended chords in Settings.'
+  if (!iiviOptions(cfg).length) return 'Turn on chord types for the ii, V and I (for example m7, 7 and maj7) in Settings.'
   return null
 }
 
@@ -62,8 +63,24 @@ const IIVI_ROLES: Record<'major' | 'minor', Record<Family, Roles>> = {
   },
 }
 
+const allowed = (cfg: DrillConfig, ids: string[]) => ids.filter((id) => cfg.qualities[id] !== false)
+
+/** Mode + family combinations where every role (ii, V, I) has at least one enabled chord type. */
+function iiviOptions(cfg: DrillConfig): { mode: 'major' | 'minor'; family: Family }[] {
+  const out: { mode: 'major' | 'minor'; family: Family }[] = []
+  for (const mode of ['major', 'minor'] as const) {
+    if (mode === 'major' ? !cfg.iiviMajor : !cfg.iiviMinor) continue
+    for (const family of FAMILIES) {
+      if (!cfg.families[family]) continue
+      const r = IIVI_ROLES[mode][family]
+      if (allowed(cfg, r.ii).length && allowed(cfg, r.V).length && allowed(cfg, r.I).length) out.push({ mode, family })
+    }
+  }
+  return out
+}
+
 function choose(cfg: DrillConfig, ids: string[], rng: Rng): Quality {
-  const ok = ids.filter((id) => cfg.qualities[id] !== false)
+  const ok = allowed(cfg, ids)
   return QUALITY_BY_ID[ok.length ? pick(ok, rng) : ids[0]]
 }
 
@@ -72,12 +89,8 @@ function make(chord: Chord, bars: number, context?: string): DrillChord {
 }
 
 export function iiVI(cfg: DrillConfig, rng: Rng = defaultRng): DrillChord[] {
-  const modes: ('major' | 'minor')[] = []
-  if (cfg.iiviMajor) modes.push('major')
-  if (cfg.iiviMinor) modes.push('minor')
-  const mode = modes.length ? pick(modes, rng) : 'major'
-  const families = FAMILIES.filter((f) => cfg.families[f])
-  const family = families.length ? pick(families, rng) : 'sevenths'
+  const options = iiviOptions(cfg)
+  const { mode, family } = options.length ? pick(options, rng) : { mode: 'major' as const, family: 'sevenths' as Family }
   const key: Key = keyOf(pick(mode === 'major' ? II_V_I_MAJOR : II_V_I_MINOR, rng), mode)
   const roles = IIVI_ROLES[mode][family]
   const ii = transpose(key.tonic, { steps: 1, semis: 2 })

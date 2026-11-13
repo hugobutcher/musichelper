@@ -121,12 +121,26 @@ export function getInstruments(): Instruments {
 
 const midiToFreq = (m: number) => Tone.Frequency(m, 'midi').toFrequency()
 
+// Sampler.triggerAttackRelease() forgets its voices immediately, so releaseAll() could not stop
+// them. Instead we attack now and release on a timer, which keeps every sounding note stoppable.
+const pendingReleases = new Set<ReturnType<typeof setTimeout>>()
+
 /** Play MIDI notes on the piano (or the fallback synth until samples load). */
 export function playPiano(midis: number[], durationSec: number, time: number, velocity = 0.6) {
   const inst = getInstruments()
   const freqs = midis.map(midiToFreq)
-  if (pianoLoaded) inst.piano.triggerAttackRelease(freqs, durationSec, time, velocity)
-  else inst.pianoFallback.triggerAttackRelease(freqs, durationSec, time, velocity)
+  if (!pianoLoaded) {
+    inst.pianoFallback.triggerAttackRelease(freqs, durationSec, time, velocity)
+    return
+  }
+  inst.piano.triggerAttack(freqs, time, velocity)
+  const releaseAt = time + durationSec
+  const ms = Math.max(0, (releaseAt - Tone.getContext().currentTime) * 1000 - 60)
+  const id = setTimeout(() => {
+    pendingReleases.delete(id)
+    inst.piano.triggerRelease(freqs, Math.max(releaseAt, Tone.now()))
+  }, ms)
+  pendingReleases.add(id)
 }
 
 export function playBass(midi: number, durationSec: number, time: number, velocity = 0.8) {
@@ -139,6 +153,8 @@ export function click(time: number, accent: boolean) {
 
 export function releaseAll() {
   if (!instruments) return
+  pendingReleases.forEach(clearTimeout)
+  pendingReleases.clear()
   instruments.piano.releaseAll()
   instruments.pianoFallback.releaseAll()
   instruments.bass.triggerRelease()

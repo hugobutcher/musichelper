@@ -118,12 +118,14 @@ const TENSION_ROLES: Role[] = ['5', '9', '11', '13']
 /**
  * Spell every chord tone from the root. Tensions (5ths, 9ths, 11ths, 13ths) that would need a
  * double accidental are respelled to an unused letter with at most one accidental, the way
- * charts write them (D♭7alt: E, not F♭; A, not B𝄫). Chord-defining tones keep strict spelling.
+ * charts write them (D♭7alt: E, not F♭; A, not B𝄫). Chord-defining tones keep strict spelling,
+ * including the ♯5 of augmented chords (B+ is B D♯ F𝄪, not B D♯ G).
  */
 export function chordTones(c: Chord): SpelledTone[] {
   const tones = c.quality.tones.map((tn) => ({ role: tn.role, pitch: transpose(c.root, tn.iv), semis: tn.iv.semis }))
   for (const tn of tones) {
     if (Math.abs(tn.pitch.acc) < 2 || !TENSION_ROLES.includes(tn.role)) continue
+    if (tn.role === '5' && tn.semis === 8) continue
     const used = new Set(tones.filter((x) => x !== tn).map((x) => x.pitch.letter))
     const alt = spellingsOf(pitchClass(tn.pitch))
       .filter((p) => !used.has(p.letter))
@@ -157,7 +159,8 @@ export function bestRoot(pc: number, quality: Quality): Pitch {
   const preferred = (minorish ? MINOR_ROOTS : MAJOR_ROOTS)[pc]
   let best: Pitch | null = null
   let bestCost = Infinity
-  for (const p of spellingsOf(pc)) {
+  // Never name a root C♭, F♭, E♯ or B♯ (C°7 beats B♯°7 even though it needs a B𝄫).
+  for (const p of spellingsOf(pc).filter((x) => !isAwkward(x))) {
     const name = 'CDEFGAB'[p.letter] + (p.acc === 1 ? '#' : p.acc === -1 ? 'b' : '')
     const c = spellingCost(p, quality) + (name === preferred ? 0 : 0.01)
     if (c < bestCost) {

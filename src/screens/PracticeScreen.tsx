@@ -17,6 +17,7 @@ export default function PracticeScreen() {
   const [settingsOpen, setSettingsOpen] = useState(false)
 
   const setView = (view: PracticeView) => {
+    if (view === settings.view) return
     stopAll()
     update((s) => ({ ...s, view }))
   }
