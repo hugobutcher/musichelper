@@ -6,7 +6,7 @@ import type { Clef, Melody } from '../theory/sightreading'
 import type { Voicing } from '../theory/voicing'
 
 const INK = '#1a1a1a'
-const HIGHLIGHT = '#c77d00'
+const HIGHLIGHT = '#007aff'
 
 /** Resolves once the bundled Bravura music font is usable. */
 let fontsReady: Promise<unknown> | null = null

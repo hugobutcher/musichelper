@@ -1,10 +1,10 @@
 """Draws the app icons (pure Python, no dependencies). Run: py tools/make_icons.py"""
 import os, struct, zlib
 
-BG = (18, 18, 18)
-GOLD = (240, 180, 41)
-WHITE = (245, 245, 240)
-BLACK = (24, 24, 24)
+BG = (0, 122, 255)
+GOLD = (255, 255, 255)
+WHITE = (255, 255, 255)
+BLACK = (28, 28, 30)
 
 def shade(u, v):
     """Colour at normalised coords (0..1, 0..1)."""
@@ -19,7 +19,7 @@ def shade(u, v):
             if abs(rel - b) < 0.30 and v < ky0 + (ky1 - ky0) * 0.6:
                 return BLACK
         if abs(rel - round(rel)) < 0.025 and 0 < round(rel) < 5:
-            return (60, 60, 60)
+            return (190, 190, 196)
         return WHITE
     # gold bar above keyboard
     if kx0 <= u <= kx1 and 0.22 <= v < 0.27:
