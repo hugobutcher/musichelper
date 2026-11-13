@@ -1,0 +1,14 @@
+# Song audio stays on your devices only, never in the repo
+*.mp3
+*.m4a
+*.wav
+*.flac
+*.aac
+*.zip
+stems/
+separated/
+
+node_modules/
+dist/
+.DS_Store
+.env*
