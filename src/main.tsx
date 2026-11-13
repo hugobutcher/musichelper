@@ -3,7 +3,11 @@ import { createRoot } from 'react-dom/client'
 import { registerSW } from 'virtual:pwa-register'
 import App from './App'
 import { isBusy } from './audio/session'
+import { consumeDriveRedirect } from './songs/drive'
 import './styles.css'
+
+// Coming back from Google sign-in: store the token and open the Songs tab (before first render).
+consumeDriveRedirect()
 
 // A new version of the app downloads in the background. Apply it the next time the app is
 // hidden (you switch away or lock the phone), never while you are practising.

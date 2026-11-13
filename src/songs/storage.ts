@@ -13,6 +13,8 @@ export interface StoredSong {
   duration: number
   files: MixFile[]
   importedAt: number
+  /** Set when imported from Google Drive, so unchanged files are skipped next time. */
+  drive?: { id: string; modifiedTime: string }
 }
 
 const DB_NAME = 'musichelper'
@@ -77,23 +79,22 @@ export async function requestPersistence() {
   }
 }
 
-/** Import one .musichelper.zip; returns the song id. */
-export async function importSongZip(file: File): Promise<StoredSong> {
-  const bytes = new Uint8Array(await file.arrayBuffer())
+/** Import one .musichelper.zip (picked on the phone or downloaded from Drive). */
+export async function importSongZip(file: Blob, name: string, drive?: StoredSong['drive']): Promise<StoredSong> {
   let entries: Record<string, Uint8Array>
   try {
-    entries = unzipSync(bytes)
+    entries = unzipSync(new Uint8Array(await file.arrayBuffer()))
   } catch {
-    throw new Error(`${file.name} isn’t a Music Helper song file.`)
+    throw new Error(`${name} isn’t a Music Helper song file.`)
   }
   const metaBytes = entries['meta.json']
-  if (!metaBytes) throw new Error(`${file.name} is missing meta.json.`)
+  if (!metaBytes) throw new Error(`${name} is missing meta.json.`)
   const meta = JSON.parse(new TextDecoder().decode(metaBytes)) as { format?: string; songId: string; duration: number; files: MixFile[] }
-  if (meta.format !== 'musichelper-song' || !SONG_BY_ID[meta.songId]) throw new Error(`${file.name} is for a song this app doesn’t know.`)
+  if (meta.format !== 'musichelper-song' || !SONG_BY_ID[meta.songId]) throw new Error(`${name} is for a song this app doesn’t know.`)
   const files = meta.files.filter((f) => entries[f])
-  if (!files.includes('full.mp3')) throw new Error(`${file.name} has no full recording.`)
+  if (!files.includes('full.mp3')) throw new Error(`${name} has no full recording.`)
 
-  const stored: StoredSong = { songId: meta.songId, duration: meta.duration, files, importedAt: Date.now() }
+  const stored: StoredSong = { songId: meta.songId, duration: meta.duration, files, importedAt: Date.now(), drive }
   await tx(['songs', 'audio'], 'readwrite', (t) => {
     for (const f of files) t.objectStore('audio').put(new Blob([entries[f]], { type: 'audio/mpeg' }), `${meta.songId}/${f}`)
     t.objectStore('songs').put(stored)

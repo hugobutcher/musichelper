@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { GROOVES, type GrooveId } from '../audio/grooves'
 import { type ChordBeat, live, previewChord, setBpm, startChordSession, stopAll } from '../audio/session'
 import { ChordStaff } from '../notation/Notation'
@@ -111,7 +112,7 @@ export default function ChordPractice({ settings, update, settingsOpen, closeSet
         <div className="card empty">{problem}</div>
       ) : (
         <>
-          <div className="card paper main-chord" onClick={skip} role="button" aria-label="Current chord. Tap for next chord when stopped.">
+          <div className="card paper main-chord" onClick={skip} role="button" aria-label="Current chord. Tap for the next chord.">
             <div className="chord-head">
               <div className="chord-name">{names ? chordName(current.chord) : ' '}</div>
               <button
@@ -127,18 +128,6 @@ export default function ChordPractice({ settings, update, settingsOpen, closeSet
             </div>
             {names && current.context && <div className="chord-context">{current.context}</div>}
             <ChordStaff voicing={current.voicing} scale={1.1} height={196} />
-            {beat?.countIn ? <div className="count-in">{beat.countIn}</div> : null}
-          </div>
-
-          <div className="beat-row">
-            {[0, 1, 2, 3].map((i) => (
-              <span key={i} className={beat && !beat.countIn && beat.beatInBar === i ? 'dot on' : beat?.countIn && 4 - beat.countIn === i ? 'dot count' : 'dot'} />
-            ))}
-            {current.bars > 1 && (
-              <span className="bar-count">
-                bar {(beat?.countIn ? 0 : (beat?.barInChord ?? 0)) + 1}/{current.bars}
-              </span>
-            )}
           </div>
 
           <div className="card paper next-chord" onClick={skip}>
@@ -161,10 +150,23 @@ export default function ChordPractice({ settings, update, settingsOpen, closeSet
 
       <BpmControl bpm={settings.bpm} onChange={changeBpm} />
 
-      <button className={playing ? 'play-btn stop' : 'play-btn'} onClick={playing ? stop : start} disabled={!playing && !!problem}>
-        {playing ? 'Stop' : 'Start'}
+      <button className="play-btn" onClick={start} disabled={!!problem}>
+        Start
       </button>
-      {!playing && !problem && <p className="hint">Tap the chord to skip to the next one.</p>}
+      {!problem && <p className="hint">Tap the chord to skip to the next one.</p>}
+
+      {playing && (
+        <FocusView
+          current={current}
+          next={next}
+          names={names}
+          countIn={beat?.countIn ?? 0}
+          bpm={settings.bpm}
+          onBpm={changeBpm}
+          onToggleNames={() => set('showNames', !names)}
+          onStop={stop}
+        />
+      )}
 
       <ChordSettingsSheet open={settingsOpen} onClose={closeSettings} settings={settings} update={update} changeBpm={changeBpm} />
     </div>
@@ -172,6 +174,63 @@ export default function ChordPractice({ settings, update, settingsOpen, closeSet
 }
 
 /** Tempo field that lets you type freely and only applies (and clamps) the value when you finish. */
+/** Full-screen practice view shown while playing: just the chords, tempo and Stop. */
+function FocusView(props: {
+  current: DrillChord
+  next: DrillChord
+  names: boolean
+  countIn: number
+  bpm: number
+  onBpm: (n: number) => void
+  onToggleNames: () => void
+  onStop: () => void
+}) {
+  const { current, next, names, countIn, bpm, onBpm, onToggleNames, onStop } = props
+  return createPortal(
+    <div className="focus" role="dialog" aria-label="Practising">
+      <div className="focus-top">
+        <span className="focus-status">{countIn ? 'Count-in…' : ''}</span>
+        <button className={names ? 'pill on' : 'pill'} onClick={onToggleNames} aria-pressed={names}>
+          Names {names ? 'on' : 'off'}
+        </button>
+      </div>
+      <div className="focus-main">
+        <div className="focus-name">{names ? chordName(current.chord) : ' '}</div>
+        {names && current.context ? <div className="focus-context">{current.context}</div> : <div className="focus-context"> </div>}
+        <div className="card paper focus-card">
+          <ChordStaff voicing={current.voicing} scale={1.45} height={262} />
+        </div>
+        <div className="focus-next">
+          <div className="next-label">
+            Next
+            <strong>{names ? chordName(next.chord) : ''}</strong>
+          </div>
+          <div className="next-staff">
+            <ChordStaff voicing={next.voicing} scale={0.62} height={122} />
+          </div>
+        </div>
+      </div>
+      <div className="focus-bottom">
+        <div className="focus-bpm">
+          <button className="round" onClick={() => onBpm(bpm - 5)} aria-label="Slower by 5">
+            −
+          </button>
+          <div className="bpm-value">
+            {bpm} <span>BPM</span>
+          </div>
+          <button className="round" onClick={() => onBpm(bpm + 5)} aria-label="Faster by 5">
+            +
+          </button>
+        </div>
+        <button className="play-btn stop" onClick={onStop}>
+          Stop
+        </button>
+      </div>
+    </div>,
+    document.body,
+  )
+}
+
 function BpmInput({ bpm, onCommit }: { bpm: number; onCommit: (n: number) => void }) {
   const [draft, setDraft] = useState(String(bpm))
   useEffect(() => setDraft(String(bpm)), [bpm])

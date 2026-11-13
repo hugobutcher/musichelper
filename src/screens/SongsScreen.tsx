@@ -1,9 +1,29 @@
 import { useEffect, useRef, useState } from 'react'
 import SongView from '../songs/SongView'
+import {
+  DriveAuthError,
+  downloadDriveFile,
+  driveConfigured,
+  driveToken,
+  listSongFiles,
+  startDriveSignIn,
+  takeDriveError,
+  takePendingDriveImport,
+} from '../songs/drive'
 import { SONGS, SONG_BY_ID } from '../songs/songs'
 import { type StoredSong, importSongZip, listStoredSongs } from '../songs/storage'
 
 const OPEN_KEY = 'mh.songs.open'
+
+type Message = { kind: 'ok' | 'error'; text: string }
+
+const mb = (bytes: number) => (bytes / 1048576).toFixed(0)
+
+/** "joy-spring.musichelper.zip" → "Joy Spring" (falls back to the file name). */
+function titleFor(fileName: string) {
+  const id = fileName.replace(/\.musichelper\.zip$/i, '')
+  return SONG_BY_ID[id]?.title ?? fileName
+}
 
 export default function SongsScreen() {
   const [stored, setStored] = useState<Record<string, StoredSong>>({})
@@ -16,18 +36,33 @@ export default function SongsScreen() {
     }
   })
   const [busy, setBusy] = useState(false)
+  const [progress, setProgress] = useState<string | null>(null)
   const [loaded, setLoaded] = useState(false)
-  const [message, setMessage] = useState<{ kind: 'ok' | 'error'; text: string } | null>(null)
+  const [message, setMessage] = useState<Message | null>(null)
   const fileInput = useRef<HTMLInputElement>(null)
 
   const refresh = () =>
     listStoredSongs()
-      .then((list) => setStored(Object.fromEntries(list.map((s) => [s.songId, s]))))
+      .then((list) => {
+        const map = Object.fromEntries(list.map((s) => [s.songId, s]))
+        setStored(map)
+        return map
+      })
+      .catch((err) => {
+        setMessage({ kind: 'error', text: `Couldn’t read saved songs: ${String(err)}` })
+        return {} as Record<string, StoredSong>
+      })
       .finally(() => setLoaded(true))
-      .catch((err) => setMessage({ kind: 'error', text: `Couldn’t read saved songs: ${String(err)}` }))
 
+  // On open: load what's stored, and finish a Google Drive import if we just came back from sign-in.
   useEffect(() => {
-    void refresh()
+    const err = takeDriveError()
+    if (err) setMessage({ kind: 'error', text: err })
+    const pending = takePendingDriveImport()
+    void refresh().then((map) => {
+      if (pending && driveToken()) void importFromDrive(map)
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const open = (id: string | null) => {
@@ -40,6 +75,61 @@ export default function SongsScreen() {
     }
   }
 
+  const importFromDrive = async (current: Record<string, StoredSong> = stored) => {
+    const token = driveToken()
+    if (!token) {
+      startDriveSignIn()
+      return
+    }
+    setBusy(true)
+    setMessage(null)
+    setProgress('Looking in your Google Drive…')
+    const added: string[] = []
+    const skipped: string[] = []
+    const errors: string[] = []
+    try {
+      const files = await listSongFiles(token)
+      if (!files.length) {
+        setMessage({ kind: 'error', text: 'No .musichelper.zip files found in your Google Drive. Upload the “Music Helper import” folder to Drive, then try again.' })
+        return
+      }
+      for (const [i, f] of files.entries()) {
+        const id = f.name.replace(/\.musichelper\.zip$/i, '')
+        const have = current[id]?.drive
+        if (have && have.id === f.id && have.modifiedTime === f.modifiedTime) {
+          skipped.push(titleFor(f.name))
+          continue
+        }
+        const label = `${titleFor(f.name)} (${i + 1} of ${files.length})`
+        setProgress(`Downloading ${label}…`)
+        try {
+          const blob = await downloadDriveFile(token, f, (got) => setProgress(`Downloading ${label} · ${mb(got)} of ${mb(f.size)} MB`))
+          setProgress(`Saving ${label}…`)
+          const s = await importSongZip(blob, f.name, { id: f.id, modifiedTime: f.modifiedTime })
+          added.push(SONG_BY_ID[s.songId].title)
+        } catch (err) {
+          if (err instanceof DriveAuthError) throw err
+          errors.push(`${f.name}: ${err instanceof Error ? err.message : String(err)}`)
+        }
+      }
+      const parts = []
+      if (added.length) parts.push(`Added ${added.join(', ')}.`)
+      if (skipped.length) parts.push(`Already up to date: ${skipped.join(', ')}.`)
+      if (errors.length) parts.push(errors.join(' '))
+      setMessage({ kind: errors.length ? 'error' : 'ok', text: parts.join(' ') })
+    } catch (err) {
+      if (err instanceof DriveAuthError) {
+        setMessage({ kind: 'error', text: `${err.message}` })
+      } else {
+        setMessage({ kind: 'error', text: `Google Drive import failed: ${err instanceof Error ? err.message : String(err)}` })
+      }
+    } finally {
+      setProgress(null)
+      setBusy(false)
+      await refresh()
+    }
+  }
+
   const onFiles = async (files: FileList | null) => {
     if (!files?.length) return
     setBusy(true)
@@ -48,17 +138,21 @@ export default function SongsScreen() {
     const errors: string[] = []
     for (const f of Array.from(files)) {
       try {
-        const s = await importSongZip(f)
+        setProgress(`Saving ${f.name}…`)
+        const s = await importSongZip(f, f.name)
         done.push(SONG_BY_ID[s.songId].title)
       } catch (err) {
         errors.push(err instanceof Error ? err.message : String(err))
       }
     }
     await refresh()
+    setProgress(null)
     setBusy(false)
     if (fileInput.current) fileInput.current.value = ''
-    if (errors.length) setMessage({ kind: 'error', text: errors.join(' ') })
-    else setMessage({ kind: 'ok', text: `Added ${done.join(', ')}.` })
+    const parts = []
+    if (done.length) parts.push(`Added ${done.join(', ')}.`)
+    if (errors.length) parts.push(errors.join(' '))
+    setMessage({ kind: errors.length ? 'error' : 'ok', text: parts.join(' ') })
   }
 
   if (openId && !loaded) return <p className="hint">Loading…</p>
@@ -89,15 +183,25 @@ export default function SongsScreen() {
 
       <div className="card import-card">
         <h3>{count ? 'Add or update song audio' : 'Add your recordings'}</h3>
-        <p>
-          Pick the <strong>.musichelper.zip</strong> files (one per song) made on your computer. Put them in iCloud Drive, OneDrive or Google Drive
-          (or email them to yourself), then choose them here. You can select several at once. Audio is stored only on this phone.
-        </p>
-        <input ref={fileInput} type="file" accept=".zip,application/zip" multiple hidden onChange={(e) => void onFiles(e.target.files)} />
-        <button className="play-btn" disabled={busy} onClick={() => fileInput.current?.click()}>
-          {busy ? 'Importing…' : 'Choose song files'}
-        </button>
+        {driveConfigured() ? (
+          <>
+            <p>
+              Upload the <strong>Music Helper import</strong> folder (the <strong>.musichelper.zip</strong> files) to your Google Drive, then tap below.
+              The app finds them anywhere in your Drive and imports new or changed songs. Audio is kept only on this phone.
+            </p>
+            <button className="play-btn" disabled={busy} onClick={() => void importFromDrive()}>
+              {busy ? 'Importing…' : 'Import from Google Drive'}
+            </button>
+          </>
+        ) : (
+          <p>Pick the .musichelper.zip files (one per song) made on your computer. Google Drive import isn’t set up yet.</p>
+        )}
+        {progress && <p className="progress">{progress}</p>}
         {message && <p className={message.kind === 'ok' ? 'msg ok' : 'msg error'}>{message.text}</p>}
+        <input ref={fileInput} type="file" accept=".zip,application/zip" multiple hidden onChange={(e) => void onFiles(e.target.files)} />
+        <button className={driveConfigured() ? 'text-btn files-btn' : 'play-btn'} disabled={busy} onClick={() => fileInput.current?.click()}>
+          {driveConfigured() ? 'Or choose files on this phone' : 'Choose song files'}
+        </button>
       </div>
     </section>
   )
