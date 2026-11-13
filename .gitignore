@@ -13,3 +13,5 @@ dist/
 .DS_Store
 .env*
 *.tsbuildinfo
+tools/.venv/
+__pycache__/
