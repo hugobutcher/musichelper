@@ -324,7 +324,7 @@ h1 {
 @keyframes fade-in { from { opacity: 0 } to { opacity: 1 } }
 .focus-top { display: flex; align-items: center; justify-content: space-between; min-height: 36px; }
 .focus-status { color: var(--muted); font-size: 15px; }
-.focus-main { flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+.focus-main { flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: safe center; gap: 10px; overflow-y: auto; }
 .focus-name { font-size: 52px; font-weight: 700; text-align: center; letter-spacing: 0.3px; line-height: 1.05; min-height: 56px; }
 .focus-context { text-align: center; color: var(--muted); font-size: 15px; min-height: 20px; }
 .focus-card { padding: 6px 0; }
@@ -368,4 +368,9 @@ h1 {
 .screen:has(.note-practice) { display: flex; flex-direction: column; }
 .screen:has(.note-practice) > .practice { flex: 1 0 auto; display: flex; flex-direction: column; }
 .note-practice { flex: 1 0 auto; display: flex; flex-direction: column; }
-.note-practice .piano { flex: 1; height: auto; min-height: 220px; max-height: 520px; }
+.note-practice .piano { flex: 1; height: auto; min-height: min(220px, 26dvh); max-height: 520px; }
+@media (max-height: 700px) {
+  .note-feedback { margin: 6px 0 4px; min-height: 28px; }
+  .focus-name { font-size: 40px; min-height: 44px; }
+  .focus-main { gap: 6px; }
+}

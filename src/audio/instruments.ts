@@ -57,6 +57,11 @@ export async function unlockAudio(): Promise<void> {
   unlocked = true
 }
 
+/** True once audio has been unlocked by a tap and is running. */
+export function audioRunning() {
+  return unlocked && Tone.getContext().state === 'running'
+}
+
 export function getInstruments(): Instruments {
   if (instruments) return instruments
   const master = new Tone.Compressor({ threshold: -16, ratio: 3 }).toDestination()

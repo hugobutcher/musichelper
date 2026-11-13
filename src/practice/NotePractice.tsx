@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { audioRunning } from '../audio/instruments'
 import { playNote, stopAll } from '../audio/session'
 import { NoteStaff } from '../notation/Notation'
 import { midiOf, pitchClass, pitchName } from '../theory/notes'
@@ -61,7 +62,8 @@ export default function NotePractice({ settings, update, settingsOpen, closeSett
     const correct = pc === target
     setFeedback({ pressed: pc, correct })
     setScore((s) => ({ right: s.right + (correct ? 1 : 0), total: s.total + 1, streak: correct ? s.streak + 1 : 0 }))
-    if (settings.sound) {
+    // Only play if audio is already unlocked; a note queued before the unlock would sound late.
+    if (settings.sound && audioRunning()) {
       // Play what you pressed, in the written note's octave so you hear the difference.
       const midi = midiOf(note.note) - target + pc
       void playNote(midi)

@@ -186,6 +186,8 @@ function FocusView(props: {
   onStop: () => void
 }) {
   const { current, next, names, countIn, bpm, onBpm, onToggleNames, onStop } = props
+  // Smaller staff on short phones (e.g. iPhone SE) so everything fits without scrolling.
+  const short = window.innerHeight < 700
   return createPortal(
     <div className="focus" role="dialog" aria-label="Practising">
       <div className="focus-top">
@@ -198,7 +200,7 @@ function FocusView(props: {
         <div className="focus-name">{names ? chordName(current.chord) : ' '}</div>
         {names && current.context ? <div className="focus-context">{current.context}</div> : <div className="focus-context"> </div>}
         <div className="card paper focus-card">
-          <ChordStaff voicing={current.voicing} scale={1.45} height={262} />
+          <ChordStaff voicing={current.voicing} scale={short ? 1.2 : 1.45} height={short ? 216 : 262} />
         </div>
         <div className="focus-next">
           <div className="next-label">

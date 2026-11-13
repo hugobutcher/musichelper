@@ -102,14 +102,27 @@ export function forgetDriveToken() {
   localStorage.removeItem(TOKEN_KEY)
 }
 
+const AUTH_REASONS = ['authError', 'insufficientPermissions', 'ACCESS_TOKEN_SCOPE_INSUFFICIENT', 'invalidCredentials']
+
 async function api(token: string, url: string): Promise<Response> {
   const res = await fetch(url, { headers: { Authorization: `Bearer ${token}` } })
-  if (res.status === 401 || res.status === 403) {
-    forgetDriveToken()
-    throw new DriveAuthError('Google Drive access expired. Sign in again.')
+  if (res.ok) return res
+  // Only a real sign-in problem should forget the token; other 403s (Drive API not enabled,
+  // rate limits, a file that can't be downloaded) are reported with Google's own message.
+  let message = `Google Drive error ${res.status}`
+  let reason = ''
+  try {
+    const body = (await res.json()) as { error?: { message?: string; errors?: { reason?: string }[]; status?: string } }
+    message = body.error?.message ?? message
+    reason = body.error?.errors?.[0]?.reason ?? body.error?.status ?? ''
+  } catch {
+    /* not JSON */
   }
-  if (!res.ok) throw new Error(`Google Drive error ${res.status}`)
-  return res
+  if (res.status === 401 || (res.status === 403 && AUTH_REASONS.includes(reason))) {
+    forgetDriveToken()
+    throw new DriveAuthError('Google Drive access expired or wasn’t granted. Sign in again.')
+  }
+  throw new Error(message)
 }
 
 /** All .musichelper.zip files in the user's Drive (any folder). */
@@ -122,12 +135,17 @@ export async function listSongFiles(token: string): Promise<DriveFile[]> {
       fields: 'nextPageToken, files(id, name, size, modifiedTime)',
       pageSize: '200',
       spaces: 'drive',
+      orderBy: 'modifiedTime desc',
       ...(pageToken ? { pageToken } : {}),
     })
     const res = await api(token, `https://www.googleapis.com/drive/v3/files?${params}`)
     const body = (await res.json()) as { nextPageToken?: string; files: { id: string; name: string; size?: string; modifiedTime: string }[] }
     for (const f of body.files) {
-      if (f.name.toLowerCase().endsWith('.musichelper.zip')) out.push({ id: f.id, name: f.name, size: Number(f.size ?? 0), modifiedTime: f.modifiedTime })
+      const name = f.name.toLowerCase()
+      // Newest first, so if the folder was uploaded twice only the latest copy of each song is used.
+      if (name.endsWith('.musichelper.zip') && !out.some((o) => o.name.toLowerCase() === name)) {
+        out.push({ id: f.id, name: f.name, size: Number(f.size ?? 0), modifiedTime: f.modifiedTime })
+      }
     }
     pageToken = body.nextPageToken ?? ''
   } while (pageToken)

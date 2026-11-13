@@ -2,12 +2,26 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { registerSW } from 'virtual:pwa-register'
 import App from './App'
+import { audioRunning, unlockAudio } from './audio/instruments'
 import { isBusy } from './audio/session'
 import { consumeDriveRedirect } from './songs/drive'
 import './styles.css'
 
 // Coming back from Google sign-in: store the token and open the Songs tab (before first render).
 consumeDriveRedirect()
+
+// iOS only lets audio start from a completed tap (touchend/click), not from a touch-down.
+// Unlock on the first such tap anywhere, so instant-response controls (the piano) can play.
+const unlockOnTap = () => {
+  void unlockAudio().then(() => {
+    if (audioRunning()) {
+      document.removeEventListener('touchend', unlockOnTap)
+      document.removeEventListener('click', unlockOnTap)
+    }
+  })
+}
+document.addEventListener('touchend', unlockOnTap, { passive: true })
+document.addEventListener('click', unlockOnTap)
 
 // A new version of the app downloads in the background. Apply it the next time the app is
 // hidden (you switch away or lock the phone), never while you are practising.
